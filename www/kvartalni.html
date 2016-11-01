@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>Институт за човекови права</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/skin.css">
+    <link rel="stylesheet" type="text/css" href="styles/framework.css">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/plugins.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    <script type="text/javascript" src="js/ihr.js"></script>
+</head>
+
+
+<body>
+    <div id="page-transitions">
+
+        <div class="page-preloader page-preloader-dark">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="landing-menu landing-light hidden-menu transparent-backgrounds">
+            <div class="landing-menu-scroll">
+                <div class="landing-header">
+                    <h1>IHR</h1>
+                    <a href="#" class="landing-remove"><i class="ion-navicon"></i></a>
+                    <div class="clear"></div>
+                </div>
+                <div class="menu-items">
+                    <a data-submenu="sub1" class="menu-item open-submenu active-submenu" href="index.html">
+                        <i class="border-green-dark bg-green-dark ion-ios-home-outline"></i>
+                        <em>Новости</em>
+                    </a>
+                    <a data-submenu="sub2" class="menu-item open-submenu" href="kvartalni.html">
+                        <i class="border-blue-dark bg-blue-dark ion-ios-gear-outline"></i>
+                        <em>Квартални извештаи</em>
+                    </a>
+                    <a data-submenu="sub3" class="menu-item open-submenu" href="dokumenti.html">
+                        <i class="border-orange-dark bg-orange-dark ion-ios-list-outline"></i>
+                        <em>Поврзани документи</em>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header header-light">
+            <h1>IHR</h1>
+            <a href="#" class="landing-deploy"><i class="ion-navicon"></i></a>
+            <div class="clear"></div>
+        </div>
+
+        <div id="page-content" class="page-content header-clear">
+            <div id="page-content-scroll">
+
+                <div class="heading-strip bg-1">
+                    <h3>Квартални извештаи</h3>
+                    <div class="overlay dark-overlay"></div>
+                </div>
+                <div class="decoration decoration-margins"></div>
+
+                <div class="content">
+                    <div class="page-blog">
+                        <div class="blog-posts">
+
+                        </div>
+                        <a href="#" class="button button-full button-light btn-get-events" onclick="getDocuments('kvartalni-izvestai')">Прикажи повеќе</a>
+                        <div class="footer footer-light">
+                            <a href="index.html" class="footer-logo scale-hover"></a>
+                            <p>
+                                <a href="http://ihr.org.mk/">Институт за човекови права</a><br>
+                                <span>Телефон: (+389) 2 3243 331 </span><br>
+                                <span>Адреса: ул. Рајко Жинзифов 49А Скопје, 1000, Македонија</span><br>
+                                <span>e-mail: <a href="mailto:ihr@ihr.org.mk">ihr@ihr.org.mk</a></span><br>
+                            </p>
+                            <!--<div class="footer-socials">
+        <a href="#" class="icon icon-round icon-ghost icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-ghost icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-ghost icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-ghost icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-ghost icon-xs show-share-bottom border-magenta-dark"><i class="ion-android-share"></i></a>
+        <a href="#" class="icon icon-round icon-ghost icon-xs back-to-top border-blue-light"><i class="ion-arrow-up-b"></i></a>
+        </div>-->
+                            <div class="decoration"></div>
+                            <p class="copyright-text">Copyright <span id="copyright-year"></span>. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    $(function () {
+        getDocuments('kvartalni-izvestai');
+
+    });
+</script>
