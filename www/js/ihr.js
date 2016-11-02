@@ -10,7 +10,7 @@
             var html = "";
             $.each(data["messages"], function (index, el) {
                 html += "<div class='page-blog-list'>"
-                    + "<h4 class='page-blog-title'>" + el.title + "</h4><strong class='page-blog-tags'>Објавено на: " + el.publishDate + "</strong>"
+                    + "<div class='page-blog-tags'>Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                     + "<div class='page-blog-content'><p>" + el.description + "</p>"
                 + "</div><div class='clear'></div>"
                         + "</div><div class='decoration'></div>";
