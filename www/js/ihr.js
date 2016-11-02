@@ -10,7 +10,7 @@
             var html = "";
             $.each(data["messages"], function (index, el) {
                 html += "<div class='page-blog-list'>"
-                    + "<div class='page-blog-tags'>Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
+                    + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                     + "<div class='page-blog-content'><p>" + el.description + "</p>"
                 + "</div><div class='clear'></div>"
                         + "</div><div class='decoration'></div>";
@@ -37,9 +37,9 @@ function getDocuments(type) {
                 var html = "";
             $.each(data["documents"], function (index, el) {
                 html += "<div class='page-blog-list'>"
-                    + "<h4 class='page-blog-title'>" + el.name + "</h4><strong class='page-blog-tags'>Објавено на: " + el.publishDate + "</strong>"
+                    + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.name + "</h4>"
                     + " <div class='page-blog-list-by'> "
-                              + "<a href='http://demo3.ifkreativa.com" + el.link + "' class='button button-light button-xs'>Превземи</a>"
+                              + "<a href='http://demo3.ifkreativa.com" + el.link + "' class='button btn-download'><i class='ion-ios-download date-icon'></i> Превземи</a>"
                           + "</div><div class='clear'></div>"
                         + "</div><div class='decoration'></div>";
 
