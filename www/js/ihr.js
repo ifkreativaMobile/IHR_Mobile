@@ -1,8 +1,10 @@
-﻿function getEvents() {
+﻿var domain = "http://demo3.ifkreativa.com";
+
+function getEvents() {
     var take = 3;
     var skipCount = getSkipCount();
     $.ajax({
-        url: "http://localhost:51766/api/getMessages?lang=mk&skip=" + skipCount + "&take=" + take + "",
+        url: domain + "/api/getMessages?lang=mk&skip=" + skipCount + "&take=" + take + "",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
@@ -20,7 +22,12 @@
                 if (!data["hasMore"])
                     $(".btn-get-events").hide();
             }
+        },
+        error: function (error)
+        {
+            alert(error.html);
         }
+
     })
 }
 
@@ -30,7 +37,7 @@ function getDocuments(_type) {
     var apiAction = _type == "povrzani-dokumenti" ? "getDocuments" : "getReports";
    
     $.ajax({
-        url: "http://localhost:51766/api/" + apiAction + "?skip=" + skipCount + "&take=" + take + "",
+        url: domain + apiAction + "?skip=" + skipCount + "&take=" + take + "",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
