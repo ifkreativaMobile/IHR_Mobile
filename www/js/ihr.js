@@ -37,7 +37,7 @@ function getDocuments(_type) {
     var apiAction = _type == "povrzani-dokumenti" ? "getDocuments" : "getReports";
    
     $.ajax({
-        url: domain + apiAction + "?skip=" + skipCount + "&take=" + take + "",
+        url: domain + "/api/" +  apiAction + "?skip=" + skipCount + "&take=" + take + "",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
