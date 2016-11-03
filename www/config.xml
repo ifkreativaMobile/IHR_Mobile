@@ -25,7 +25,7 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
-  <preference name="android-targetSdkVersion" value="14" />
+    <preference name="android-targetSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
     <plugin name="org.apache.cordova.device" source="npm" spec="0.3.0" />
     <plugin name="org.apache.cordova.device-orientation" source="npm" spec="0.3.11" />
