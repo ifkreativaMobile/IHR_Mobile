@@ -92,14 +92,18 @@ var app = {
     },
 
     onBackKeyDown: function (e) {
+        alert("Back key down clicked");
         //e.preventDefault();
         if (localStorage.page) {
+            alert("Active page is defined");
             if (localStorage.page == "homepage") {
+                alert("Active page is: " + localStorage.page)
                 if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                     navigator.app.exitApp();
                 }
             }
             else {
+                alert("Active page is: " + localStorage.page + ". User will be redirected");
                 navigator.app.backHistory()
             }
         }
