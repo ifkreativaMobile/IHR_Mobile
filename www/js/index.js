@@ -52,39 +52,39 @@ var app = {
 
     onNotificationGCM: function (e) {
         //alert(JSON.stringify(e));
-        switch (e.event) {
-            case 'registered':
-                if (e.regid.length > 0) {
-                        localStorage.registerID = e.regid;
-                        $("#preloader").addClass("hide");
-                        jQuery.ajax({
-                            url: "http://wazzzapp.net/Mobile/RegisterDevice?registerID=" + e.regid,
-                            type: "GET",
-                            dataType: "json",
-                            data: { registerID: e.regid },
-                            withCredentials: false,
-                            success: function (data, status) {
-                                //$("#preloader").addClass("hide");
-                            },
-                            error: function (error) {
-                            }
-                        });
-                    }
-                break;
+        //switch (e.event) {
+        //    case 'registered':
+        //        if (e.regid.length > 0) {
+        //                localStorage.registerID = e.regid;
+        //                $("#preloader").addClass("hide");
+        //                jQuery.ajax({
+        //                    url: "http://wazzzapp.net/Mobile/RegisterDevice?registerID=" + e.regid,
+        //                    type: "GET",
+        //                    dataType: "json",
+        //                    data: { registerID: e.regid },
+        //                    withCredentials: false,
+        //                    success: function (data, status) {
+        //                        //$("#preloader").addClass("hide");
+        //                    },
+        //                    error: function (error) {
+        //                    }
+        //                });
+        //            }
+        //        break;
 
-            case 'message':
-                //navigator.notification.alert(JSON.stringify(e), function () { }, "WazzzApp Frankfurt", "Ok");
-                navigator.notification.alert(e.payload.message, function () { }, e.payload.title, "Ok");
-                break;
+        //    case 'message':
+        //        //navigator.notification.alert(JSON.stringify(e), function () { }, "WazzzApp Frankfurt", "Ok");
+        //        navigator.notification.alert(e.payload.message, function () { }, e.payload.title, "Ok");
+        //        break;
 
-            case 'error':
-                alert('GCM error = ' + e.msg);
-                break;
+        //    case 'error':
+        //        alert('GCM error = ' + e.msg);
+        //        break;
 
-            default:
-                alert('An unknown GCM event has occurred');
-                break;
-        }
+        //    default:
+        //        alert('An unknown GCM event has occurred');
+        //        break;
+        //}
     },
 
     onPause: function () {
