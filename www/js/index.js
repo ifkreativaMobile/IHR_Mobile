@@ -93,14 +93,16 @@ var app = {
 
     onBackKeyDown: function (e) {
         e.preventDefault();
-        if (localStorage.page != "") {
-            
+        if (localStorage.page == "homepage") {
+            /* 
+             Event preventDefault/stopPropagation not required as adding backbutton
+              listener itself override the default behaviour. Refer below PhoneGap link.
+            */
+            //e.preventDefault();
+            navigator.app.exitApp();
         }
-        else
-        {
-            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
-                navigator.app.exitApp();
-            }
+        else {
+            navigator.app.backHistory()
         }
     },
 

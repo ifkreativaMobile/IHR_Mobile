@@ -110,7 +110,8 @@
 </html>
 
 <script type="text/javascript">
-    window.onload = function () {
+    $(document).ready(function () {
+        localStorage.page = "dokumenti";
         getDocuments('povrzani-dokumenti');
-    }
+    });
 </script>
