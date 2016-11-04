@@ -92,17 +92,16 @@ var app = {
     },
 
     onBackKeyDown: function (e) {
-        e.preventDefault();
-        if (localStorage.page == "homepage") {
-            /* 
-             Event preventDefault/stopPropagation not required as adding backbutton
-              listener itself override the default behaviour. Refer below PhoneGap link.
-            */
-            //e.preventDefault();
-            navigator.app.exitApp();
-        }
-        else {
-            navigator.app.backHistory()
+        //e.preventDefault();
+        if (localStorage.page) {
+            if (localStorage.page == "homepage") {
+                if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+                    navigator.app.exitApp();
+                }
+            }
+            else {
+                navigator.app.backHistory()
+            }
         }
     },
 
@@ -115,11 +114,13 @@ var app = {
     },
 
     onOffline: function () {
+        alert("You are offline now");
         // Handle the offline event
     },
 
     onOnline: function () {
         // Handle the online event
+        alert("You are online now");
     },
 
     onResume: function () {
