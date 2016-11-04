@@ -92,18 +92,17 @@ var app = {
     },
 
     onBackKeyDown: function (e) {
-        alert("Back key down clicked");
+        navigator.notification.alert("Back key down clicked", function () { }, "Порака", "Ok");
         //e.preventDefault();
         if (localStorage.page) {
-            alert("Active page is defined");
             if (localStorage.page == "homepage") {
-                alert("Active page is: " + localStorage.page)
+                navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
                 if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                     navigator.app.exitApp();
                 }
             }
             else {
-                alert("Active page is: " + localStorage.page + ". User will be redirected");
+                navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected", function () { }, "Порака", "Ok");
                 navigator.app.backHistory()
             }
         }
@@ -132,3 +131,8 @@ var app = {
         //$("#preloader").addClass("hide");
     }
 };
+
+function GoBack()
+{
+
+}
