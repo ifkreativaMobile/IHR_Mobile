@@ -74,7 +74,7 @@ function getContent(location) {
         getDocuments('kvartalni-izvestai');
     }
     else if (location.includes("dokumenti.html")) {
-        localStorage.page = "kvartalni";
+        localStorage.page = "povrzani-dokumenti";
         getDocuments('povrzani-dokumenti');
     }
     else {

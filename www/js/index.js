@@ -87,6 +87,7 @@ function onBackKeyDown(e) {
         else {
             //alert("Local storage page is homepage " + localStorage.page);
             navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
+            history.go(-1);
             navigator.app.backHistory();
         }
     }
