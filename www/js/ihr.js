@@ -47,7 +47,7 @@ function getDocuments(_type) {
                     html += "<div class='page-blog-list'>"
                         + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.name + "</h4>"
                         + " <div class='page-blog-list-by'> "
-                                  + "<a href='http://localhost:51766" + el.link + "' class='button btn-download'><i class='ion-ios-download date-icon'></i> Превземи</a>"
+                                  + "<a href='" + domain + el.link + "' class='button btn-download'><i class='ion-ios-download date-icon'></i> Превземи</a>"
                               + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
 
