@@ -25,7 +25,7 @@ function getEvents() {
         },
         error: function (error)
         {
-            alert("Greska pri citanje od server");
+            showNoNetwork();
         }
 
     })
@@ -56,8 +56,10 @@ function getDocuments(_type) {
                 if (!data["HasMore"])
                     $(".btn-get-events").hide();
             }
+        },
+        error: function (error) {
+            showNoNetwork();
         }
-
     });
     
 }
@@ -81,4 +83,17 @@ function getContent(location) {
         getEvents();
         localStorage.page = "homepage";
     }
+}
+
+function showNoNetwork() {
+    navigator.notification.alert(
+        'Во моментов немате активна интернет конекција. Вклучете интернет и стиснете ок.',  // message
+        onNoNetworkConfirm,              // callback to invoke with index of button pressed
+        'Порака',            // title
+        'Ok'          // buttonLabels
+    );
+}
+
+function onNoNetworkConfirm() {
+    getContent(window.location.href);
 }

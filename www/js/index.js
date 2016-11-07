@@ -93,6 +93,7 @@ function onBackKeyDown(e) {
     }
     else
     {
+
         alert("No local storage");
     }
 }
@@ -106,13 +107,13 @@ function onSearchKeyDown() {
 }
 
 function onOffline() {
-    alert("You are offline now");
+    //alert("You are offline now");
     // Handle the offline event
 }
 
 function onOnline() {
     // Handle the online event
-    alert("You are online now");
+    //alert("You are online now");
 }
 
 function onResume() {
