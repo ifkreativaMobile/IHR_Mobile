@@ -79,14 +79,14 @@ function onBackKeyDown(e) {
     //e.preventDefault();
     if (localStorage.page) {
         if (localStorage.page == "homepage") {
-            navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
+            //navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
             if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                 navigator.app.exitApp();
             }
         }
         else {
             //alert("Local storage page is homepage " + localStorage.page);
-            navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
+            //navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
             history.go(-1);
             navigator.app.backHistory();
         }
