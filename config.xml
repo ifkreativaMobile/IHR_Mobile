@@ -8,6 +8,12 @@
         IF Kreativa
     </author>
 
+    <cordova>
+      <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+      </feature>
+    </cordova>
+  
 		<preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="permissions" value="none" />
@@ -27,6 +33,7 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-targetSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
+
     <plugin name="org.apache.cordova.device" source="npm" spec="0.3.0" />
     <plugin name="org.apache.cordova.device-orientation" source="npm" spec="0.3.11" />
     <plugin name="cordova-plugin-whitelist" source="npm"/>
