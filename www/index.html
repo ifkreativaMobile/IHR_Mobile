@@ -106,15 +106,15 @@
 
     
     </div>
-    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert("Load homepage");
+        localStorage.page = "homepage";
+        getEvents();
+    });
+    </script>
 </body>
 </html>
 
 
 
-<script type="text/javascript">
-    $(document).ready(function (){
-        localStorage.page = "homepage";
-        getEvents();
-    });
-</script>
