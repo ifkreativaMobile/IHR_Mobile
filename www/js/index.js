@@ -76,19 +76,16 @@ function onPause() {
 
 
 function onBackKeyDown(e) {
-    //alert("BackButton pressed");
-    navigator.notification.alert("Back key down clicked", function () { }, "Порака", "Ok");
     //e.preventDefault();
     if (localStorage.page) {
         if (localStorage.page == "homepage") {
-            //alert("Local storage page is homepage");
             navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
             if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                 navigator.app.exitApp();
             }
         }
         else {
-            alert("Local storage page is homepage " + localStorage.page);
+            //alert("Local storage page is homepage " + localStorage.page);
             navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
             navigator.app.backHistory()
         }

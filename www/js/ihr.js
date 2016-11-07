@@ -64,16 +64,21 @@ function getDocuments(_type) {
 
 
 function getSkipCount() {
-
     return $(".page-blog-list").length > 0 ? $(".page-blog-list").length : 0;
 }
 
 
 function getContent(location) {
-    if (location.includes("kvartalni.html"))
+    if (location.includes("kvartalni.html")) {
+        localStorage.page = "kvartalni";
         getDocuments('kvartalni-izvestai');
-    else if (location.includes("dokumenti.html"))
+    }
+    else if (location.includes("dokumenti.html")) {
+        localStorage.page = "kvartalni";
         getDocuments('povrzani-dokumenti');
-    else
+    }
+    else {
         getEvents();
+        localStorage.page = "homepage";
+    }
 }
