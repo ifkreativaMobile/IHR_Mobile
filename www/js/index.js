@@ -6,7 +6,7 @@ function Initalize()
 
 function bindEvents()
 {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
+    document.addEventListener('deviceready', onDeviceReady, false);
 }
 
 function onDeviceReady()
