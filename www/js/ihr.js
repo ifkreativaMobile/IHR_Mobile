@@ -25,7 +25,7 @@ function getEvents() {
         },
         error: function (error)
         {
-            alert(error.html);
+            alert("Greska pri citanje od server");
         }
 
     })
