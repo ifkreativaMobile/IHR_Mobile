@@ -76,20 +76,21 @@ function onPause() {
 
 
 function onBackKeyDown(e) {
-    navigator.notification.alert("Back key down clicked", function () { }, "Порака", "Ok");
-    //e.preventDefault();
-    if (localStorage.page) {
-        if (localStorage.page == "homepage") {
-            navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
-            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
-                navigator.app.exitApp();
-            }
-        }
-        else {
-            navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected", function () { }, "Порака", "Ok");
-            navigator.app.backHistory()
-        }
-    }
+    alert("BackButton pressed");
+    //navigator.notification.alert("Back key down clicked", function () { }, "Порака", "Ok");
+    ////e.preventDefault();
+    //if (localStorage.page) {
+    //    if (localStorage.page == "homepage") {
+    //        navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
+    //        if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+    //            navigator.app.exitApp();
+    //        }
+    //    }
+    //    else {
+    //        navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected", function () { }, "Порака", "Ok");
+    //        navigator.app.backHistory()
+    //    }
+    //}
 }
 
 function onMenuKeyDown() {
