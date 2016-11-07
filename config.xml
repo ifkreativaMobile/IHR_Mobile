@@ -42,6 +42,7 @@
     <plugin name="org.apache.cordova.splashscreen" source="npm" spec="1.0.0" />
     <plugin name="org.apache.cordova.vibration" source="npm" spec="0.3.13" />
     <plugin name="org.apache.cordova.dialogs" spec="0.2.6" source="pgb" />
+    <gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
   
     <icon src="icon.png" />
     <icon platform="android" qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />

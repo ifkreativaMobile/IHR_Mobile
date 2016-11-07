@@ -90,7 +90,7 @@ function showNoNetwork() {
         'Во моментов немате активна интернет конекција. Вклучете интернет и стиснете ок.',  // message
         onNoNetworkConfirm,              // callback to invoke with index of button pressed
         'Порака',            // title
-        'Ok'          // buttonLabels
+        'ОК'          // buttonLabels
     );
 }
 
