@@ -17,9 +17,9 @@ function onDeviceReady()
 function receivedEvent(id)
 {
     console.log('Received Event: ' + id);
-    //LoadScripts();
+    
     //callHome();
-
+    getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener("menubutton", onMenuKeyDown, false);
