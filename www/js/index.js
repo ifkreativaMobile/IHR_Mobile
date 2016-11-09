@@ -24,8 +24,8 @@ function receivedEvent(id)
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener("menubutton", onMenuKeyDown, false);
     document.addEventListener("searchbutton", onSearchKeyDown, false);
-    //document.addEventListener("offline", onOffline, false);
-    //document.addEventListener("online", onOnline, false);
+    document.addEventListener("offline", onOffline, false);
+    document.addEventListener("online", onOnline, false);
     document.addEventListener("resume", onResume, false);
 
     //var pushNotification = window.plugins.pushNotification;

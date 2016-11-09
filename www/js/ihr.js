@@ -1,5 +1,4 @@
-﻿var domain = "http://localhost:51766";
-var deviceID = "";
+﻿var domain = "http://demo3.ifkreativa.com";
 
 function updateHit(guid)
 {
@@ -48,7 +47,7 @@ function getEvents() {
         },
         error: function (error)
         {
-            //showNoNetwork();
+            showNoNetwork();
         }
 
     })
@@ -85,7 +84,7 @@ function getDocuments(_type) {
             }
         },
         error: function (error) {
-            //showNoNetwork();
+            showNoNetwork();
         }
     });
     
@@ -112,24 +111,15 @@ function getContent(location) {
     }
 }
 
-//function showNoNetwork() {
-//    navigator.notification.alert(
-//        'Во моментов немате активна интернет конекција. Вклучете интернет и стиснете ок.',  // message
-//        onNoNetworkConfirm,              // callback to invoke with index of button pressed
-//        'Порака',            // title
-//        'ОК'          // buttonLabels
-//    );
-//}
+function showNoNetwork() {
+    navigator.notification.alert(
+        'Во моментов немате активна интернет конекција. Вклучете интернет и стиснете ок.',  // message
+        onNoNetworkConfirm,              // callback to invoke with index of button pressed
+        'Порака',            // title
+        'ОК'          // buttonLabels
+    );
+}
 
 function onNoNetworkConfirm() {
     getContent(window.location.href);
 }
-
-function getUIDsuccess(uuid) {
-    deviceID = uuid;
-};
-
-function getUIDfail(uuid) {
-    //while(deviceID == "")
-    //    window.plugins.uniqueDeviceID.get(getUIDsuccess, getUIDfail).delay(1000);
-};
