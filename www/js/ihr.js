@@ -1,7 +1,8 @@
 ﻿var domain = "http://demo3.ifkreativa.com";
 
-function updateHit(guid)
+function DownloadAndUpdateHit(guid, link)
 {
+    window.open(link, '_system');
     var uuid = device.uuid;
     $.ajax({
         //url: domain + "/api/updateHits",
@@ -72,7 +73,7 @@ function getDocuments(_type) {
                                 '<div class="page-blog-tags"><i class="ion-calendar date-icon"></i> Објавено на: ' + el.publishDate + '</div>' +
                                 '<h4 class="page-blog-title">' + el.name + '</h4>' +
                                 '<div class="page-blog-list-by">' +
-                                    '<a href="' + domain + el.link + '" class="button btn-download" onClick="updateHit(\'' + el.guid + '\')"><i class="ion-ios-download date-icon"></i> Превземи</a>' +
+                                    '<a class="button btn-download" onClick="DownloadAndUpdateHit(\'' + el.guid + '\',\'' + domain + el.link + '\')"><i class="ion-ios-download date-icon"></i> Превземи</a>' +
                                 '</div>' +
                                 '<div class="clear"></div>' +
                                 '<div class="">вкупно превземања: <span class="doc-' + el.guid + '">' + el.hits + '</span></div>' +
