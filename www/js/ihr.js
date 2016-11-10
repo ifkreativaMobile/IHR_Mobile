@@ -2,7 +2,7 @@
 
 function DownloadAndUpdateHit(guid, link)
 {
-    window.open(link, '_system');
+    window.open(link, '_blank');
     var uuid = device.uuid;
     $.ajax({
         //url: domain + "/api/updateHits",
