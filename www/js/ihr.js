@@ -128,7 +128,7 @@ function onNoNetworkConfirm() {
 
 function UpdateNumber(guid)
 {
-    var number = parseInt($(".doc-" + guid).val());
+    var number = parseInt($(".doc-" + guid).text());
     number = number + 1;
-    $(".doc-" + guid).val(number);
+    $(".doc-" + guid).text(number);
 }
