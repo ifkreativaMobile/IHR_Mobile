@@ -1,5 +1,27 @@
 ﻿var domain = "http://demo3.ifkreativa.com";
 
+function updateHit(guid)
+{
+    var uuid = device.uuid;
+    $.ajax({
+        //url: domain + "/api/updateHits",
+        //data: JSON.stringify({ guid: guid, uuid: device.uuid}),
+        url: domain + "/api/updateHits?guid=" + guid + "&uuid=" + uuid,
+        type: "POST",
+        dataType: "jsonp",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data["status"] == "fail")
+                alert("Превземањето не е евидентирано.");
+            else if (data["status"] == "success")
+                alert("Презвемањето е евидентирано.");
+        },
+        error: function (e) {
+            alert(e.responseText);
+        }
+    })
+}
+
 function getEvents() {
     var take = 3;
     var skipCount = getSkipCount();
@@ -25,7 +47,7 @@ function getEvents() {
         },
         error: function (error)
         {
-            alert("Greska pri citanje od server");
+            showNoNetwork();
         }
 
     })
@@ -44,20 +66,26 @@ function getDocuments(_type) {
             if (data["status"] == "OK") {
                 var html = "";
                 $.each(data["documents"], function (index, el) {
-                    html += "<div class='page-blog-list'>"
-                        + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.name + "</h4>"
-                        + " <div class='page-blog-list-by'> "
-                                  + "<a href='http://localhost:51766" + el.link + "' class='button btn-download'><i class='ion-ios-download date-icon'></i> Превземи</a>"
-                              + "</div><div class='clear'></div>"
-                            + "</div><div class='decoration'></div>";
+                    html += '<div class="page-blog-list">' +
+                                '<div class="page-blog-tags"><i class="ion-calendar date-icon"></i> Објавено на: ' + el.publishDate + '</div>' +
+                                '<h4 class="page-blog-title">' + el.name + '</h4>' +
+                                '<div class="page-blog-list-by">' +
+                                    '<a href="' + domain + el.link + '" class="button btn-download" onClick="updateHit(\'' + el.guid + '\')"><i class="ion-ios-download date-icon"></i> Превземи</a>' +
+                                '</div>' +
+                                '<div class="clear"></div>' +
+                                '<div class="">вкупно превземања: ' + el.hits + '</div>' +
+                            '</div>' +
+                            '<div class="decoration"></div>';
 
                 });
                 $(".blog-posts").append(html);
                 if (!data["HasMore"])
                     $(".btn-get-events").hide();
             }
+        },
+        error: function (error) {
+            showNoNetwork();
         }
-
     });
     
 }
@@ -74,11 +102,24 @@ function getContent(location) {
         getDocuments('kvartalni-izvestai');
     }
     else if (location.includes("dokumenti.html")) {
-        localStorage.page = "kvartalni";
+        localStorage.page = "povrzani-dokumenti";
         getDocuments('povrzani-dokumenti');
     }
     else {
         getEvents();
         localStorage.page = "homepage";
     }
+}
+
+function showNoNetwork() {
+    navigator.notification.alert(
+        'Во моментов немате активна интернет конекција. Вклучете интернет и стиснете ок.',  // message
+        onNoNetworkConfirm,              // callback to invoke with index of button pressed
+        'Порака',            // title
+        'ОК'          // buttonLabels
+    );
+}
+
+function onNoNetworkConfirm() {
+    getContent(window.location.href);
 }

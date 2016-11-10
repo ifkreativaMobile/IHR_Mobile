@@ -79,19 +79,21 @@ function onBackKeyDown(e) {
     //e.preventDefault();
     if (localStorage.page) {
         if (localStorage.page == "homepage") {
-            navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
+            //navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
             if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                 navigator.app.exitApp();
             }
         }
         else {
             //alert("Local storage page is homepage " + localStorage.page);
-            navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
-            navigator.app.backHistory()
+            //navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
+            history.go(-1);
+            navigator.app.backHistory();
         }
     }
     else
     {
+
         alert("No local storage");
     }
 }
@@ -105,13 +107,13 @@ function onSearchKeyDown() {
 }
 
 function onOffline() {
-    alert("You are offline now");
+    //alert("You are offline now");
     // Handle the offline event
 }
 
 function onOnline() {
     // Handle the online event
-    alert("You are online now");
+    //alert("You are online now");
 }
 
 function onResume() {

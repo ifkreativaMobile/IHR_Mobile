@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src data: gap: https://ssl.gstatic.com 'unsafe-eval' *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://demo3.ifkreativa.com; connect-src 'self' http://demo3.ifkreativa.com">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src data: gap: https://ssl.gstatic.com 'unsafe-eval' *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://demo3.ifkreativa.com; connect-src 'self' http://demo3.ifkreativa.com">-->
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="styles/ionicons.css">
     <link rel="stylesheet" type="text/css" href="styles/custom.css">
   
-    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <script type="text/javascript" src="scripts/plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
@@ -75,7 +75,7 @@
                         <div class="blog-posts">  
                          
                         </div>
-                        <a href="#" class="button button-full button-light more-bt-p btn-get-events" onclick="">Прикажи повеќе</a>
+                        <a href="#" class="button button-full button-light more-bt-p btn-get-events" onclick="getEvents()">Прикажи повеќе</a>
                     </div>
              
                 </div>

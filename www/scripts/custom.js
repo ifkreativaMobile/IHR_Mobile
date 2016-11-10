@@ -865,7 +865,7 @@ $(document).ready(function () {
                 "transition":"all 250ms ease"
             });
             getContent(window.location.href);
-            alert(window.location.href);
+            //alert(window.location.href);
         }
       };
       var smoothState = $('#page-transitions').smoothState(options).data('smoothState');
