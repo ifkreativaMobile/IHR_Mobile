@@ -11,10 +11,12 @@ function updateHit(guid)
         dataType: "jsonp",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            if (data["status"] == "fail")
-                alert("Превземањето не е евидентирано.");
-            else if (data["status"] == "success")
-                alert("Презвемањето е евидентирано.");
+            if (data == "success")
+                UpdateNumber(guid);
+            //if (data["status"] == "fail")
+            //    alert("Превземањето не е евидентирано.");
+            //else if (data["status"] == "success")
+            //    alert("Презвемањето е евидентирано.");
         },
         error: function (e) {
             alert(e.responseText);
@@ -73,7 +75,7 @@ function getDocuments(_type) {
                                     '<a href="' + domain + el.link + '" class="button btn-download" onClick="updateHit(\'' + el.guid + '\')"><i class="ion-ios-download date-icon"></i> Превземи</a>' +
                                 '</div>' +
                                 '<div class="clear"></div>' +
-                                '<div class="">вкупно превземања: ' + el.hits + '</div>' +
+                                '<div class="">вкупно превземања: <span class="doc-' + el.guid + '">' + el.hits + '</span></div>' +
                             '</div>' +
                             '<div class="decoration"></div>';
 
@@ -122,4 +124,11 @@ function showNoNetwork() {
 
 function onNoNetworkConfirm() {
     getContent(window.location.href);
+}
+
+function UpdateNumber(guid)
+{
+    var number = parseInt($(".doc-" + guid).val());
+    number = number + 1;
+    $(".doc-" + guid).val(number);
 }
