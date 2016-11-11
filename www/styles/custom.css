@@ -26,6 +26,9 @@ p { line-height:1.4}
 .border-red-dark { border: solid 1px #ea1d25 !important; }
 .border-blue-light { border: solid 1px #d6df1f !important; }
 .border-yellow-light { border: solid 1px #fdaf17 !important; }
+.back-button { position: relative; float: left; height: 100%;  }
+.back-icon { font-size:40px;  }
+.header h1 { padding: 10px 10px 0px 10px; position: relative; float: left; }
 
 
 /* roboto-regular - latin_cyrillic-ext */

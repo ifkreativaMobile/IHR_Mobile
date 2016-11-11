@@ -17,7 +17,7 @@ function onDeviceReady()
 function receivedEvent(id)
 {
     console.log('Received Event: ' + id);
-    
+    localStorage.platform = device.platform;
     //callHome();
     getContent(window.location.href);
     document.addEventListener("pause", onPause, false);

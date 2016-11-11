@@ -1,5 +1,7 @@
 ﻿var domain = "http://demo3.ifkreativa.com";
 
+
+
 function DownloadAndUpdateHit(guid, link)
 {
     window.open(link, '_system');
@@ -39,7 +41,7 @@ function getEvents() {
                     html += "<div class='page-blog-list'>"
                         + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                         + "<div class='page-blog-content'><p>" + el.description + "</p>"
-                    + "</div><div class='clear'></div>"
+                        + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
 
                 });
