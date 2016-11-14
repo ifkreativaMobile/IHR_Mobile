@@ -110,6 +110,7 @@ function onPause() {
 //}
 
 function onBackKeyDown(e) {
+    alert("Back button pressed");
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {
         if (localStorage.page == "homepage") {
@@ -121,8 +122,10 @@ function onBackKeyDown(e) {
             }
         }
         else {
+            alert("Ok, should back me");
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
                 // IOS DEVICE
+                alert("IOS device detected");
                 history.go(-1);
                 if (typeof (navigator.app) !== "undefined") {
                     navigator.app.backHistory();
