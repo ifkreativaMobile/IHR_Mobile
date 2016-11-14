@@ -121,20 +121,19 @@ function onBackKeyDown(e) {
             }
         }
         else {
-            getEvents();
-            //if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-            //    // IOS DEVICE
-            //    history.go(-1);
-            //    history.go(-1);
-            //} else if (userAgent.match(/Android/i)) {
-            //    // ANDROID DEVICE
-            //    history.go(-1);
-            //    navigator.app.backHistory();
-            //} else {
-            //    // EVERY OTHER DEVICE
-            //    history.go(-1);
-            //    history.go(-1);
-            //}
+            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+                // IOS DEVICE
+                history.go(-1);
+                history.go(-1);
+            } else if (userAgent.match(/Android/i)) {
+                // ANDROID DEVICE
+                history.go(-1);
+                navigator.app.backHistory();
+            } else {
+                // EVERY OTHER DEVICE
+                history.go(-1);
+                history.go(-1);
+            }
         }
     }
     else {
