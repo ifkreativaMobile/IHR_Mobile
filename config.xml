@@ -46,7 +46,7 @@
     <plugin name="org.apache.cordova.vibration" source="npm" spec="0.3.13" />
     <plugin name="org.apache.cordova.dialogs" source="npm" spec="1.3.0"/>
     <plugin name="cordova-plugin-uniquedeviceid" source="npm" spec="1.3.2" />
-    <plugin name="com.phonegap.plugin.statusbar" source="npm" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
   
     <icon src="icon.png" />
     <icon platform="android" qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
