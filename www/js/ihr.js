@@ -78,7 +78,7 @@ function getDocuments(_type) {
                                     '<a class="button btn-download" onClick="DownloadAndUpdateHit(\'' + el.guid + '\',\'' + domain + el.link + '\')"><i class="ion-ios-download date-icon"></i> Превземи</a>' +
                                 '</div>' +
                                 '<div class="clear"></div>' +
-                                '<div class="">вкупно превземања: <span class="doc-' + el.guid + '">' + el.hits + '</span></div>' +
+                                //'<div class="">вкупно превземања: <span class="doc-' + el.guid + '">' + el.hits + '</span></div>' +
                             '</div>' +
                             '<div class="decoration"></div>';
 
