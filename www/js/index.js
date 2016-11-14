@@ -75,26 +75,66 @@ function onPause() {
 }
 
 
+//function onBackKeyDown(e) {
+//    //e.preventDefault();
+//    if (localStorage.page) {
+//        if (localStorage.page == "homepage") {
+//            //navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
+//            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+//                navigator.app.exitApp();
+//            }
+//        }
+//        else {
+//            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+//            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+//                // IOS DEVICE
+//                history.go(-1);
+//            } else if (userAgent.match(/Android/i)) {
+//                // ANDROID DEVICE
+//                navigator.app.backHistory();
+//            } else {
+//                // EVERY OTHER DEVICE
+//                history.go(-1);
+//            }
+//            //alert("Local storage page is homepage " + localStorage.page);
+//            //navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
+//            //history.go(-1);
+//            //navigator.app.backHistory();
+//        }
+//    }
+//    else
+//    {
+
+//        alert("No local storage");
+//    }
+//}
+
 function onBackKeyDown(e) {
-    //e.preventDefault();
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {
         if (localStorage.page == "homepage") {
-            //navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
-            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+
+            }
+            else if(confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                 navigator.app.exitApp();
             }
         }
         else {
-            //alert("Local storage page is homepage " + localStorage.page);
-            //navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
-            history.go(-1);
-            navigator.app.backHistory();
+            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+                // IOS DEVICE
+                history.go(-1);
+            } else if (userAgent.match(/Android/i)) {
+                // ANDROID DEVICE
+                navigator.app.backHistory();
+            } else {
+                // EVERY OTHER DEVICE
+                history.go(-1);
+            }
         }
     }
-    else
-    {
-
-        alert("No local storage");
+    else {
+        //alert("No local storage");
     }
 }
 
