@@ -124,6 +124,12 @@ function onBackKeyDown(e) {
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
                 // IOS DEVICE
                 history.go(-1);
+                if (typeof (navigator.app) !== "undefined") {
+                    navigator.app.backHistory();
+                } else {
+                    window.history.back();
+                }
+
             } else if (userAgent.match(/Android/i)) {
                 // ANDROID DEVICE
                 history.go(-1);
