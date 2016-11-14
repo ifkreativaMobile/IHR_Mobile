@@ -126,6 +126,7 @@ function onBackKeyDown(e) {
                 history.go(-1);
             } else if (userAgent.match(/Android/i)) {
                 // ANDROID DEVICE
+                history.go(-1);
                 navigator.app.backHistory();
             } else {
                 // EVERY OTHER DEVICE
