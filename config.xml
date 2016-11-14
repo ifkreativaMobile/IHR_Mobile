@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="mk.ihr.app" version="1.0.1" versionCode="10001" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Институт за човекови права</name>
+    <name>Судски совет под лупа</name>
     <description>
-        Институт за човекови права
+      Зголемување на јавниот надзор врз работата на Судскиот совет на РМ
     </description>
     <author email="info@ifkreativa.com" href="http://ifkreativa.com">
         IF Kreativa
