@@ -8,7 +8,7 @@
 .footer-div { text-align:center; display:block; line-height:1.2; margin-bottom:10px; color:#666666; font-weight:500}
 .name-footer { text-transform:uppercase; color:#ea1d25; font-weight:700; text-decoration:none; }
 .footer-div a { display:inline-block; color:#666666;}
-.footer-div i { font-size:20px; color:#666666; margin-right:5px; line-height:1;  margin-bottom:5px; display:block;}
+.footer-div i { font-size:20px; color:#666666; margin-right:5px; line-height:1;  margin-bottom:5px;}
 .heading-strip h3, .heading-strip h4 { text-transform:uppercase; font-size:15px;}
 .bg-1 { background-image: url(../images/pictures/6.jpg); }
 .button { text-transform:uppercase; /*letter-spacing:1px;*/ background-color:#d6df1f; border:none; color:#222222; height:unset; line-height:unset; font-size:12px; font-weight:500;}

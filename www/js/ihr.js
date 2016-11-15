@@ -1,6 +1,4 @@
-﻿var domain = "http://demo3.ifkreativa.com";
-
-
+﻿var domain = "http://ihr.ifkreativa.com";
 
 function DownloadAndUpdateHit(guid, link)
 {
