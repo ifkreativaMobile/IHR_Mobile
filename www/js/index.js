@@ -124,7 +124,7 @@ function onBackKeyDown(e) {
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
                 alert("Inside IOS back button");
                 // IOS DEVICE
-                history.go(-1);
+                history.go(-2);
                 navigator.app.backHistory();
                 window.history.back();
 
