@@ -122,9 +122,12 @@ function onBackKeyDown(e) {
         }
         else {
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+                alert("Inside IOS back button");
                 // IOS DEVICE
                 history.go(-1);
-                history.go(-1);
+                navigator.app.backHistory();
+                window.history.back();
+
             } else if (userAgent.match(/Android/i)) {
                 // ANDROID DEVICE
                 history.go(-1);
