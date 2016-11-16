@@ -19,7 +19,7 @@ function receivedEvent(id)
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
     //callHome();
-    //getContent(window.location.href);
+    getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener("menubutton", onMenuKeyDown, false);
@@ -74,41 +74,6 @@ function onPause() {
     // Handle the back button
 }
 
-
-//function onBackKeyDown(e) {
-//    //e.preventDefault();
-//    if (localStorage.page) {
-//        if (localStorage.page == "homepage") {
-//            //navigator.notification.alert("Active page is: " + localStorage.page, function () { }, "Порака", "Ok");
-//            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
-//                navigator.app.exitApp();
-//            }
-//        }
-//        else {
-//            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-//            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-//                // IOS DEVICE
-//                history.go(-1);
-//            } else if (userAgent.match(/Android/i)) {
-//                // ANDROID DEVICE
-//                navigator.app.backHistory();
-//            } else {
-//                // EVERY OTHER DEVICE
-//                history.go(-1);
-//            }
-//            //alert("Local storage page is homepage " + localStorage.page);
-//            //navigator.notification.alert("Active page is: " + localStorage.page + ". User will be redirected one page back", function () { }, "Порака", "Ok");
-//            //history.go(-1);
-//            //navigator.app.backHistory();
-//        }
-//    }
-//    else
-//    {
-
-//        alert("No local storage");
-//    }
-//}
-
 function onBackKeyDown(e) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {
@@ -122,12 +87,8 @@ function onBackKeyDown(e) {
         }
         else {
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-                //alert("Inside IOS back button");
                 // IOS DEVICE
                 history.go(-2);
-                //navigator.app.backHistory();
-                //window.history.back();
-
             } else if (userAgent.match(/Android/i)) {
                 // ANDROID DEVICE
                 history.go(-1);
@@ -140,7 +101,7 @@ function onBackKeyDown(e) {
         }
     }
     else {
-        //alert("No local storage");
+       
     }
 }
 
