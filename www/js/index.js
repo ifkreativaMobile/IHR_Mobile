@@ -19,7 +19,7 @@ function receivedEvent(id)
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
     //callHome();
-    getContent(window.location.href);
+    //getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener("menubutton", onMenuKeyDown, false);
@@ -122,11 +122,11 @@ function onBackKeyDown(e) {
         }
         else {
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-                alert("Inside IOS back button");
+                //alert("Inside IOS back button");
                 // IOS DEVICE
                 history.go(-2);
-                navigator.app.backHistory();
-                window.history.back();
+                //navigator.app.backHistory();
+                //window.history.back();
 
             } else if (userAgent.match(/Android/i)) {
                 // ANDROID DEVICE
