@@ -26,6 +26,7 @@ function DownloadAndUpdateHit(guid, link)
 }
 
 function getEvents() {
+    $(".loading-wrap").removeClass("hidden");
     var take = 3;
     var skipCount = getSkipCount();
     $.ajax({
@@ -44,6 +45,7 @@ function getEvents() {
 
                 });
                 $(".blog-posts").append(html);
+                $(".loading-wrap").addClass("hidden");
                 if (!data["hasMore"])
                     $(".btn-get-events").hide();
             }
@@ -57,6 +59,7 @@ function getEvents() {
 }
 
 function getDocuments(_type) {
+    $(".loading-wrap").removeClass("hidden");
     var take = 3;
     var skipCount = getSkipCount();
     var apiAction = _type == "povrzani-dokumenti" ? "getDocuments" : "getReports";
@@ -81,7 +84,9 @@ function getDocuments(_type) {
                             '<div class="decoration"></div>';
 
                 });
+                $(".loading-wrap").addClass("hidden");
                 $(".blog-posts").append(html);
+
                 if (!data["HasMore"])
                     $(".btn-get-events").hide();
             }
