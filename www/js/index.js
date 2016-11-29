@@ -1,21 +1,19 @@
 ﻿
-function Initalize()
-{
+function Initalize() {
     bindEvents();
 }
 
-function bindEvents()
-{
+function bindEvents() {
     document.addEventListener('deviceready', onDeviceReady, false);
 }
 
-function onDeviceReady()
-{
+function onDeviceReady() {
     receivedEvent('deviceready');
+    initPushwoosh();
 }
 
-function receivedEvent(id)
-{
+function receivedEvent(id) {
+
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
     //callHome();
@@ -30,6 +28,20 @@ function receivedEvent(id)
 
     //var pushNotification = window.plugins.pushNotification;
     //pushNotification.register(app.successHandler, app.errorHandler, { "senderID": "744083827880", "ecb": "app.onNotificationGCM" });
+    pushwoosh.registerDevice(function (status) {
+        var pushToken = status.pushToken;
+        // handle successful registration here
+            },
+        function (status) {
+            // handle registration error here
+        }
+        );
+
+
+    document.addEventListener('push-notification', function (event) {
+        var notification = event.notification;
+        // handle push open here
+    });
 }
 
 
@@ -81,7 +93,7 @@ function onBackKeyDown(e) {
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
 
             }
-            else if(confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+            else if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                 navigator.app.exitApp();
             }
         }
@@ -101,7 +113,7 @@ function onBackKeyDown(e) {
         }
     }
     else {
-       
+
     }
 }
 
@@ -128,7 +140,22 @@ function onResume() {
     //$("#preloader").addClass("hide");
 }
 
+function initPushwoosh() {
+    var pushwoosh = cordova.require("pushwoosh-cordova-plugin.PushNotification");
 
+    // Should be called before pushwoosh.onDeviceReady
+    document.addEventListener('push-notification', function (event) {
+        var notification = event.notification;
+        // handle push open here
+    });
+
+    // Initialize Pushwoosh. This will trigger all pending push notifications on start.
+    pushwoosh.onDeviceReady({
+        appid: "1ED35-90D1C",
+        projectid: "1:622748095704:android:1300ad8e1fffc1ce",
+        serviceName: "PushWoosh"
+    });
+}
 
 
 
