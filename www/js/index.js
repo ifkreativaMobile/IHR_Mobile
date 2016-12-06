@@ -68,8 +68,8 @@ function initPushwoosh() {
     //});
 
     pushwoosh.onDeviceReady({
-        appid: "1:622748095704:android:1300ad8e1fffc1ce",
-        projectid: "ihr---sudski-sovet-pod-lupa",
+        appid: "1ED35-90D1C",
+        projectid: "622748095704",
         serviceName: ""
     });
 
