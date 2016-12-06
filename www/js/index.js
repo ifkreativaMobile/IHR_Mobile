@@ -52,7 +52,7 @@ function initPushwoosh() {
             var message = event.notification.message;
             var userData = event.notification.userdata;
 
-            alert(JSON.stringify(event.notification));
+            navigator.notification.alert(message, function () { },'Судски совет под лупа','ОК');
             //document.getElementById("pushMessage").innerHTML = message + "<p>";
             //document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
 
@@ -63,13 +63,6 @@ function initPushwoosh() {
             }
         }
     );
-
-    //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-    //pushNotification.onDeviceReady({
-    //    projectid: "60756016005",
-    //    appid: "4FC89B6D14A655.46488481",
-    //    serviceName: ""
-    //});
 
     pushNotification.onDeviceReady({
         appid: "1ED35-90D1C",
@@ -119,43 +112,6 @@ function receivedEvent(id) {
     document.addEventListener("resume", onResume, false);
 }
 
-
-function onNotificationGCM(e) {
-    //alert(JSON.stringify(e));
-    //switch (e.event) {
-    //    case 'registered':
-    //        if (e.regid.length > 0) {
-    //                localStorage.registerID = e.regid;
-    //                $("#preloader").addClass("hide");
-    //                jQuery.ajax({
-    //                    url: "http://wazzzapp.net/Mobile/RegisterDevice?registerID=" + e.regid,
-    //                    type: "GET",
-    //                    dataType: "json",
-    //                    data: { registerID: e.regid },
-    //                    withCredentials: false,
-    //                    success: function (data, status) {
-    //                        //$("#preloader").addClass("hide");
-    //                    },
-    //                    error: function (error) {
-    //                    }
-    //                });
-    //            }
-    //        break;
-
-    //    case 'message':
-    //        //navigator.notification.alert(JSON.stringify(e), function () { }, "WazzzApp Frankfurt", "Ok");
-    //        navigator.notification.alert(e.payload.message, function () { }, e.payload.title, "Ok");
-    //        break;
-
-    //    case 'error':
-    //        alert('GCM error = ' + e.msg);
-    //        break;
-
-    //    default:
-    //        alert('An unknown GCM event has occurred');
-    //        break;
-    //}
-}
 
 function onPause() {
     // Handle the back button
@@ -215,22 +171,6 @@ function onResume() {
     //$("#preloader").addClass("hide");
 }
 
-//function initPushwoosh() {
-//    var pushwoosh = cordova.require("pushwoosh-cordova-plugin.PushNotification");
-
-//    // Should be called before pushwoosh.onDeviceReady
-//    document.addEventListener('push-notification', function (event) {
-//        var notification = event.notification;
-//        // handle push open here
-//    });
-
-//    // Initialize Pushwoosh. This will trigger all pending push notifications on start.
-//    pushwoosh.onDeviceReady({
-//        appid: "1ED35-90D1C",
-//        projectid: "1:622748095704:android:1300ad8e1fffc1ce",
-//        serviceName: "PushWoosh"
-//    });
-//}
 
 
 
