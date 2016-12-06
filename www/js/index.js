@@ -42,9 +42,7 @@ function onPushwooshInitialized(pushNotification) {
 }
 
 function initPushwoosh() {
-    alert("Initialization");
     var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
-    alert("Cordova required done");
 
     //set push notifications handler
     document.addEventListener('push-notification',
@@ -58,7 +56,7 @@ function initPushwoosh() {
 
             //dump custom data to the console if it exists
             if (typeof (userData) != "undefined") {
-                alert(JSON.stringify(userData));
+                //alert(JSON.stringify(userData));
                 console.warn('user data: ' + JSON.stringify(userData));
             }
         }
@@ -73,12 +71,12 @@ function initPushwoosh() {
     //register for push notifications
     pushNotification.registerDevice(
         function (status) {
-            alert("Success: " + status.pushToken);
+            //alert("Success: " + status.pushToken);
             document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
         },
         function (status) {
-            alert("failed to register: " + status);
+            //alert("failed to register: " + status);
             console.warn(JSON.stringify(['failed to register ', status]));
         }
     );
