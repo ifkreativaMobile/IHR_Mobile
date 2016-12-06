@@ -42,7 +42,9 @@ function onPushwooshInitialized(pushNotification) {
 }
 
 function initPushwoosh() {
+    alert("Initialization");
     var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+    alert("Cordova required done");
 
     //set push notifications handler
     document.addEventListener('push-notification',
@@ -50,11 +52,13 @@ function initPushwoosh() {
             var message = event.notification.message;
             var userData = event.notification.userdata;
 
-            document.getElementById("pushMessage").innerHTML = message + "<p>";
-            document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
+            alert(JSON.stringify(event.notification));
+            //document.getElementById("pushMessage").innerHTML = message + "<p>";
+            //document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
 
             //dump custom data to the console if it exists
             if (typeof (userData) != "undefined") {
+                alert(JSON.stringify(userData));
                 console.warn('user data: ' + JSON.stringify(userData));
             }
         }
@@ -76,6 +80,7 @@ function initPushwoosh() {
     //register for push notifications
     pushNotification.registerDevice(
         function (status) {
+            alert("Success: " + status.pushToken);
             document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
         },
