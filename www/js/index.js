@@ -71,7 +71,7 @@ function initPushwoosh() {
     //    serviceName: ""
     //});
 
-    pushwoosh.onDeviceReady({
+    pushNotification.onDeviceReady({
         appid: "1ED35-90D1C",
         projectid: "622748095704",
         serviceName: ""
