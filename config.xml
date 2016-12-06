@@ -104,8 +104,7 @@
     <!-- Retina iPad -->
     <splash src="images/splash/ios/Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
     <splash src="images/splash/ios/Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
-  
-  
+   
     <splash platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*"/> <!-- allow all pages, use for development -->
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
