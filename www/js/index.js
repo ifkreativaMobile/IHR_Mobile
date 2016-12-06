@@ -61,9 +61,15 @@ function initPushwoosh() {
     );
 
     //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-    pushNotification.onDeviceReady({
-        projectid: "60756016005",
-        appid: "4FC89B6D14A655.46488481",
+    //pushNotification.onDeviceReady({
+    //    projectid: "60756016005",
+    //    appid: "4FC89B6D14A655.46488481",
+    //    serviceName: ""
+    //});
+
+    pushwoosh.onDeviceReady({
+        appid: "1:622748095704:android:1300ad8e1fffc1ce",
+        projectid: "ihr---sudski-sovet-pod-lupa",
         serviceName: ""
     });
 
@@ -204,22 +210,22 @@ function onResume() {
     //$("#preloader").addClass("hide");
 }
 
-function initPushwoosh() {
-    var pushwoosh = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+//function initPushwoosh() {
+//    var pushwoosh = cordova.require("pushwoosh-cordova-plugin.PushNotification");
 
-    // Should be called before pushwoosh.onDeviceReady
-    document.addEventListener('push-notification', function (event) {
-        var notification = event.notification;
-        // handle push open here
-    });
+//    // Should be called before pushwoosh.onDeviceReady
+//    document.addEventListener('push-notification', function (event) {
+//        var notification = event.notification;
+//        // handle push open here
+//    });
 
-    // Initialize Pushwoosh. This will trigger all pending push notifications on start.
-    pushwoosh.onDeviceReady({
-        appid: "1ED35-90D1C",
-        projectid: "1:622748095704:android:1300ad8e1fffc1ce",
-        serviceName: "PushWoosh"
-    });
-}
+//    // Initialize Pushwoosh. This will trigger all pending push notifications on start.
+//    pushwoosh.onDeviceReady({
+//        appid: "1ED35-90D1C",
+//        projectid: "1:622748095704:android:1300ad8e1fffc1ce",
+//        serviceName: "PushWoosh"
+//    });
+//}
 
 
 
