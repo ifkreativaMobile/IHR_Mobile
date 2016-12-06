@@ -95,8 +95,8 @@ function bindEvents() {
 }
 
 function onDeviceReady() {
-    initPushwoosh();
     receivedEvent('deviceready');
+    initPushwoosh();
 }
 
 function receivedEvent(id) {
