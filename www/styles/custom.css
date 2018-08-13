@@ -24,6 +24,7 @@ p { line-height:1.4}
 .date-icon { font-size:15px; margin-right:3px;}
 .heading-strip { padding:20px; margin-bottom:20px;}
 .border-red-dark { border: solid 1px #ea1d25 !important; }
+.border-blue-dark { border: solid 1px #006699 !important; }
 .border-blue-light { border: solid 1px #d6df1f !important; }
 .border-yellow-light { border: solid 1px #fdaf17 !important; }
 .back-button { position: relative; float: left; height: 100%;  }

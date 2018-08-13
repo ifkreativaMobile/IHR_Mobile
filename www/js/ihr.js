@@ -25,6 +25,46 @@ function DownloadAndUpdateHit(guid, link)
     })
 }
 
+function getBrief() {
+    $(".loading-wrap").removeClass("hidden");
+    var take = 3;
+    var skipCount = getSkipCount();
+    $.ajax({
+        url: domain + "/api/getBrief?lang=mk&skip=" + skipCount + "&take=" + take + "",
+        type: "GET",
+        dataType: "jsonp",
+        success: function (data) {
+            if (data["status"] == "OK") {
+                var html = "";
+                $.each(data["messages"], function (index, el) {
+                    html += "<div class='page-blog-list'>"
+                        + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
+                        + "<div class='page-blog-content'><p>" + el.description + "</p>"
+                        + "</div><div class='clear'></div>"
+                            + "</div><div class='decoration'></div>";
+
+                });
+                $(".blog-posts").append(html);
+                $(".loading-wrap").addClass("hidden");
+                if (!data["hasMore"])
+                    $(".btn-get-events").hide();
+            }
+            else
+            {
+                var html = "";
+                $(".loading-wrap").addClass("hidden");
+                html += "Во моментов нема бриф информации за приказ";
+                $(".blog-posts").append(html);
+                $(".btn-get-events").hide();
+            }
+        },
+        error: function (error) {
+            showNoNetwork();
+        }
+
+    })
+}
+
 function getEvents() {
     $(".loading-wrap").removeClass("hidden");
     var take = 3;
@@ -98,11 +138,9 @@ function getDocuments(_type) {
     
 }
 
-
 function getSkipCount() {
     return $(".page-blog-list").length > 0 ? $(".page-blog-list").length : 0;
 }
-
 
 function getContent(location) {
     if (location.includes("kvartalni.html")) {
@@ -113,8 +151,14 @@ function getContent(location) {
         localStorage.page = "povrzani-dokumenti";
         getDocuments('povrzani-dokumenti');
     }
-    else {
+    else if (location.includes("events.html")) {
+        //localStorage.page = "homepage";
+        localStorage.page = "events";
         getEvents();
+    }
+    else
+    {
+        getBrief();
         localStorage.page = "homepage";
     }
 }

@@ -72,7 +72,7 @@ function initPushwoosh() {
     pushNotification.registerDevice(
         function (status) {
             //alert("Success: " + status.pushToken);
-            document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
+            //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
         },
         function (status) {
