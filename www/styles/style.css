@@ -57,6 +57,7 @@ body{
     background-size:cover;
     background-position:center center;
     background-image:url(../images/pictures/bg.jpg);
+    transform: translateY(0px);
 }
 
 .landing-menu-scroll{
@@ -70,12 +71,20 @@ body{
 }
 
 .hidden-menu{
-    -moz-transform: translateY(-1000px);
-    -webkit-transform: translateY(-1000px);
-    -o-transform: translateY(-1000px);
-    -ms-transform: translateY(-1000px);
-    transform: translateY(-1000px);
+    -moz-transform: translateY(-1500px);
+    -webkit-transform: translateY(-1500px);
+    -o-transform: translateY(-1500px);
+    -ms-transform: translateY(-1500px);
+    transform: translateY(-1500px);
 }
+
+/*.hidden-menu{
+    -moz-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+}*/
 
 .hide-menu{opacity:0!important;}
 
