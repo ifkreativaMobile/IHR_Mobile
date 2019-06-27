@@ -43,17 +43,13 @@ function getBrief(part) {
         success: function (data) {
             if (data["status"] == "OK") {
                 var html = "";
-                var i = 1;
                 $.each(data["messages"], function (index, el) {
-                    var klik = "OpenCloseItem('messages-"+ i + "')";
-                    html += "<div class='page-blog-list' onclick='" + klik +"'>"
+                    html += "<div class='page-blog-list' onclick='OpenCloseItem(this)'>"
                         //+ "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                         + "<div class='page-blog-tags'>" + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
-                        + "<div class='messages-" + i + " page-blog-content hidden'><p>" + el.description + "</p>"
+                        + "<div class='page-blog-content hidden'><p>" + el.description + "</p>"
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
-                    i++;
-
                 });
                 $(".blog-posts").append(html);
                 $(".loading-wrap").addClass("hidden");
@@ -259,7 +255,8 @@ function UpdateNumber(guid)
 
 function OpenCloseItem(el)
 {
-    if ($("." + el).hasClass("hidden"))
-        $("." + el).removeClass("hidden");
-    else $("." + el).addClass("hidden")
+    var element = $(this).find("page-blog-content");
+    if (element.hasClass("hidden"))
+        element.removeClass("hidden");
+    else element.addClass("hidden")
 }
