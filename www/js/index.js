@@ -116,6 +116,13 @@ function onPause() {
     // Handle the back button
 }
 
+function CloseApp()
+{
+    if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+        navigator.app.exitApp();
+    }
+}
+
 function onBackKeyDown(e) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {

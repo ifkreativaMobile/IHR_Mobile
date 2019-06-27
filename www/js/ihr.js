@@ -32,7 +32,7 @@ function getBrief(part) {
     var apiAction = "";
     if (part == "sudski")
         apiAction = "getBrief";
-    else if (part = "antikorupciska")
+    else if (part == "antikorupciska")
         apiAction = "getBriefAntikorupciska";
     else apiAction = "getBriefAntidiskriminatorska";
 
@@ -80,7 +80,7 @@ function getEvents(part) {
     var apiAction = "";
     if (part == "sudski")
         apiAction = "getMessages";
-    else if (part = "antikorupciska")
+    else if (part == "antikorupciska")
         apiAction = "getMessagesAntikorupciska";
     else apiAction = "getMessagesAntidiskriminatorska";
 
@@ -129,7 +129,7 @@ function getDocuments(_type, part) {
     var apiAction = "";
     if (part == "sudski")
         apiAction = _type == "povrzani-dokumenti" ? "getDocuments" : "getReports";
-    else if (part = "antikorupciska")
+    else if (part == "antikorupciska")
         apiAction = _type == "povrzani-dokumenti" ? "getDocumentsAntikorupciska" : "getReportsAntikorupciska";
     else apiAction = _type == "povrzani-dokumenti" ? "getDocumentsAntidiskriminatorska" : "getReportsAntidiskriminatorska";
    
