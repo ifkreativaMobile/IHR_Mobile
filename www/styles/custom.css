@@ -37,7 +37,7 @@ p { line-height:1.4}
     .loading-wrap img { width:100%; }
 .hidden { display:none; }
 
-.my-menu-item { height:33vh; text-align:center; display:inline-block; width:100%; border-bottom:1px solid #eee; }
+.my-menu-item { height: 33vh; text-align: center; display: inline-block; width: 100%; border-bottom: 1px solid #eee; position: relative; float: left; }
     .my-menu-item a { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size:3vh; text-transform:uppercase; line-height:4vh; font-weight:bold; color:white; font-family:Roboto; width:100%;  }
         .my-menu-item a span { font-size:9px; font-style:italic; }
 
