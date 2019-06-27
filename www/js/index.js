@@ -100,7 +100,7 @@ function receivedEvent(id) {
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
 
-    getContent(window.location.href);
+    //getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener("menubutton", onMenuKeyDown, false);
@@ -118,28 +118,38 @@ function onPause() {
 function onBackKeyDown(e) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {
-        if (localStorage.page == "homepage") {
-            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+        if (window.location.href.indexOf("index.html"))
+        {
+            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+                       navigator.app.exitApp();
+            }
+        }
+        else
+        {
+            window.location.href = "index.html";
+        }
+        //if (localStorage.page == "homepage") {
+        //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
 
-            }
-            else if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
-                navigator.app.exitApp();
-            }
-        }
-        else {
-            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-                // IOS DEVICE
-                history.go(-2);
-            } else if (userAgent.match(/Android/i)) {
-                // ANDROID DEVICE
-                history.go(-1);
-                navigator.app.backHistory();
-            } else {
-                // EVERY OTHER DEVICE
-                history.go(-1);
-                history.go(-1);
-            }
-        }
+        //    }
+        //    else if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+        //        navigator.app.exitApp();
+        //    }
+        //}
+        //else {
+        //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+        //        // IOS DEVICE
+        //        history.go(-2);
+        //    } else if (userAgent.match(/Android/i)) {
+        //        // ANDROID DEVICE
+        //        history.go(-1);
+        //        navigator.app.backHistory();
+        //    } else {
+        //        // EVERY OTHER DEVICE
+        //        history.go(-1);
+        //        history.go(-1);
+        //    }
+        //}
     }
     else {
 

@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src data: gap: https://ssl.gstatic.com 'unsafe-eval' *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://demo3.ifkreativa.com; connect-src 'self' http://demo3.ifkreativa.com">-->
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <title>Судски совет под лупа</title>
-
+    <title>Антикорупциска под лупа</title>
+    <!--<script src="gubre/cordova.js"></script>-->
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/skin.css">
     <link rel="stylesheet" type="text/css" href="styles/framework.css">
     <link rel="stylesheet" type="text/css" href="styles/ionicons.css">
     <link rel="stylesheet" type="text/css" href="styles/custom.css">
-    
+  
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <script type="text/javascript" src="scripts/plugins.js"></script>
@@ -22,10 +23,8 @@
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 
-
-<body>
+<body onload="Initalize()">
     <div id="page-transitions">
-
         <div class="page-preloader page-preloader-dark">
             <div class="spinner"></div>
         </div>
@@ -33,24 +32,25 @@
         <div class="landing-menu landing-light hidden-menu transparent-backgrounds">
             <div class="landing-menu-scroll">
                 <div class="landing-header">
+                    
                     <h1><img src="images/logoProektsmall.png" class="logo-img" /></h1>
                     <a href="#" class="landing-remove"><i class="ion-navicon"></i></a>
                     <div class="clear"></div>
                 </div>
                 <div class="menu-items">
-                    <a class="menu-item open-submenu" href="index.html">
+                    <a class="menu-item open-submenu active-submenu" href="index-antikorupciska.html">
                         <i class="border-blue-dark bg-blue-dark ion-ios-paper-outline"></i>
                         <em>Бриф информации</em>
                     </a>
-                    <a class="menu-item open-submenu" href="events.html">
+                    <a class="menu-item open-submenu" href="events-antikorupciska.html">
                         <i class="border-red-dark bg-red-dark ion-ios-paper-outline"></i>
                         <em>Новости</em>
                     </a>
-                    <a class="menu-item open-submenu  active-submenu" href="kvartalni.html">
+                    <a class="menu-item open-submenu" href="kvartalni-antikorupciska.html">
                         <i class="border-blue-light bg-blue-light ion-ios-pie-outline"></i>
                         <em>Квартални извештаи</em>
                     </a>
-                    <a class="menu-item open-submenu" href="dokumenti.html">
+                    <a class="menu-item open-submenu" href="dokumenti-antikorupciska.html">
                         <i class="border-yellow-light bg-yellow-light ion-ios-list-outline"></i>
                         <em>Поврзани документи</em>
                     </a>
@@ -71,20 +71,21 @@
             <div id="page-content-scroll">
 
                 <div class="heading-strip bg-1">
-                    <h1>Судски совет под лупа</h1>
-                    <h3>Квартални извештаи</h3>
+                    <h1>Антикорупциска под лупа</h1>
+                    <h3>Бриф информации</h3>
                     <div class="overlay dark-overlay"></div>
                 </div>
                 <!--<div class="decoration decoration-margins"></div>-->
 
                 <div class="content">
                     <div class="page-blog">
-                        <div class="blog-posts">
-
+                        <div class="blog-posts">  
+                         
                         </div>
                         <div class="loading-wrap"><img src="images/loading.gif" /></div>
-                        <button type="button" class="button button-full button-light more-bt-p btn-get-events" onclick="getDocuments('kvartalni-izvestai','sudski')">Прикажи повеќе</button>
+                        <button type="button" class="button button-full button-light more-bt-p btn-get-events" onclick="getBrief('antikorupciska')">Прикажи повеќе</button>
                     </div>
+             
                 </div>
 
                 <div class="footer footer-light">
@@ -97,10 +98,14 @@
                     <p class="copyright-text">Copyright 2016. All Rights Reserved.</p>
                     <p class="copyright-text">Supported by the British Embassy Skopje</p>
                 </div>
-            
             </div>
         </div>
-    </div>
 
+
+    
+    </div>
 </body>
 </html>
+
+
+

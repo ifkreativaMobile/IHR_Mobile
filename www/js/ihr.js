@@ -25,12 +25,19 @@ function DownloadAndUpdateHit(guid, link)
     })
 }
 
-function getBrief() {
+function getBrief(part) {
     $(".loading-wrap").removeClass("hidden");
     var take = 3;
     var skipCount = getSkipCount();
+    var apiAction = "";
+    if (part == "sudski")
+        apiAction = "getBrief";
+    else if (part = "antikorupciska")
+        apiAction = "getBriefAntikorupciska";
+    else apiAction = "getBriefAntidiskriminatorska";
+
     $.ajax({
-        url: domain + "/api/getBrief?lang=mk&skip=" + skipCount + "&take=" + take + "",
+        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
@@ -65,12 +72,20 @@ function getBrief() {
     })
 }
 
-function getEvents() {
+function getEvents(part) {
     $(".loading-wrap").removeClass("hidden");
     var take = 3;
     var skipCount = getSkipCount();
+
+    var apiAction = "";
+    if (part == "sudski")
+        apiAction = "getMessages";
+    else if (part = "antikorupciska")
+        apiAction = "getMessagesAntikorupciska";
+    else apiAction = "getMessagesAntidiskriminatorska";
+
     $.ajax({
-        url: domain + "/api/getMessages?lang=mk&skip=" + skipCount + "&take=" + take + "",
+        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
@@ -98,11 +113,17 @@ function getEvents() {
     })
 }
 
-function getDocuments(_type) {
+function getDocuments(_type, part) {
     $(".loading-wrap").removeClass("hidden");
     var take = 3;
     var skipCount = getSkipCount();
-    var apiAction = _type == "povrzani-dokumenti" ? "getDocuments" : "getReports";
+
+    var apiAction = "";
+    if (part == "sudski")
+        apiAction = _type == "povrzani-dokumenti" ? "getDocuments" : "getReports";
+    else if (part = "antikorupciska")
+        apiAction = _type == "povrzani-dokumenti" ? "getDocumentsAntikorupciska" : "getReportsAntikorupciska";
+    else apiAction = _type == "povrzani-dokumenti" ? "getDocumentsAntidiskriminatorska" : "getReportsAntidiskriminatorska";
    
     $.ajax({
         url: domain + "/api/" +  apiAction + "?skip=" + skipCount + "&take=" + take + "",
@@ -144,22 +165,56 @@ function getSkipCount() {
 
 function getContent(location) {
     if (location.includes("kvartalni.html")) {
-        localStorage.page = "kvartalni";
+        localStorage.page = "kvartalni-sudski";
         getDocuments('kvartalni-izvestai');
     }
+    else if (location.includes("kvartalni-antidiskriminatorska.html")) {
+        localStorage.page = "kvartalni-antisdiskriminatorska";
+        getDocuments('kvartalni-izvestai','antidiskriminatorska');
+    }
+    else if (location.includes("kvartalni-antikorupciska.html")) {
+        localStorage.page = "kvartalni-antikorupciska";
+        getDocuments('kvartalni-izvestai', 'antikorupciska');
+    }
     else if (location.includes("dokumenti.html")) {
-        localStorage.page = "povrzani-dokumenti";
-        getDocuments('povrzani-dokumenti');
+        localStorage.page = "povrzani-dokumenti-sudski";
+        getDocuments('povrzani-dokumenti','sudski');
+    }
+    else if (location.includes("dokumenti-antikorupciska.html")) {
+        localStorage.page = "povrzani-dokumenti-antikorupciska";
+        getDocuments('povrzani-dokumenti', "antikorupciska");
+    }
+    else if (location.includes("dokumenti-antidsikriminatorska.html")) {
+        localStorage.page = "povrzani-dokumenti-antidsikriminatorska";
+        getDocuments('povrzani-dokumenti', "antidsikriminatorska");
     }
     else if (location.includes("events.html")) {
         //localStorage.page = "homepage";
-        localStorage.page = "events";
-        getEvents();
+        localStorage.page = "events-sudski";
+        getEvents("sudski");
     }
-    else
+    else if (location.includes("events-antikorupciska.html")) {
+        //localStorage.page = "homepage";
+        localStorage.page = "events-antikorupciska";
+        getEvents("antikorupciska");
+    }
+    else if (location.includes("events-antidiskriminatorska.html")) {
+        //localStorage.page = "homepage";
+        localStorage.page = "events-antidiskriminatorska";
+        getEvents("antidiskriminatorska");
+    }
+    else if (location.includes("index-sudski.html"))
     {
-        getBrief();
-        localStorage.page = "homepage";
+        getBrief("sudski");
+        localStorage.page = "brief-sudski";
+    }
+    else if (location.includes("index-antidiskriminatorska.html")) {
+        getBrief("antidiskriminatorska");
+        localStorage.page = "brief-antidiskriminatorska";
+    }
+    else{
+        getBrief("antikorupciska");
+        localStorage.page = "brief-antikorupciska";
     }
 }
 
