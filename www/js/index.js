@@ -126,7 +126,7 @@ function onBackKeyDown(e) {
         }
         else
         {
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
         }
         //if (localStorage.page == "homepage") {
         //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
