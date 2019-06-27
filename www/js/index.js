@@ -127,7 +127,7 @@ function onBackKeyDown(e) {
         }
         else
         {
-            window.location.href = "/index.html";
+            window.location.href = "index.html";
             localstorag.page = "homepage";
         }
         //if (localStorage.page == "homepage") {
