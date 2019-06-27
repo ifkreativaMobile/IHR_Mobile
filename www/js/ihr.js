@@ -260,6 +260,6 @@ function UpdateNumber(guid)
 function OpenCloseItem(el)
 {
     if ($("." + el).hasClass("hidden"))
-        $("." + el).removeClass(hidden);
-    else $("." + el).addClass(hidden)
+        $("." + el).removeClass("hidden");
+    else $("." + el).addClass("hidden")
 }
