@@ -181,7 +181,7 @@ function getSkipCount() {
 function getContent(location) {
     if (location.includes("kvartalni.html")) {
         localStorage.page = "kvartalni-sudski";
-        getDocuments('kvartalni-izvestai');
+        getDocuments('kvartalni-izvestai','sudski');
     }
     else if (location.includes("kvartalni-antidiskriminatorska.html")) {
         localStorage.page = "kvartalni-antisdiskriminatorska";

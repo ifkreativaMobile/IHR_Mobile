@@ -119,7 +119,7 @@ function onPause() {
 function onBackKeyDown(e) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {
-        if (localStorage.page = "homepage")
+        if (localStorage.page == "homepage")
         {
             if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                   navigator.app.exitApp();
