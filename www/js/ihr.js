@@ -27,7 +27,7 @@ function DownloadAndUpdateHit(guid, link)
 
 function getBrief(part) {
     $(".loading-wrap").removeClass("hidden");
-    var take = 3;
+    var take = 5;
     var skipCount = getSkipCount();
     var apiAction = "";
     if (part == "sudski")
@@ -43,12 +43,14 @@ function getBrief(part) {
         success: function (data) {
             if (data["status"] == "OK") {
                 var html = "";
+                var i = 1;
                 $.each(data["messages"], function (index, el) {
-                    html += "<div class='page-blog-list'>"
+                    html += "<div class='page-blog-list' onclick='OpenCloseItem(" + "messages-" + i + ")'>"
                         + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
-                        + "<div class='page-blog-content'><p>" + el.description + "</p>"
+                        + "<div class='messages-" + i + "' class='page-blog-content hidden'><p>" + el.description + "</p>"
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
+                    i++;
 
                 });
                 $(".blog-posts").append(html);
@@ -74,7 +76,7 @@ function getBrief(part) {
 
 function getEvents(part) {
     $(".loading-wrap").removeClass("hidden");
-    var take = 3;
+    var take = 5;
     var skipCount = getSkipCount();
 
     var apiAction = "";
@@ -123,7 +125,7 @@ function getEvents(part) {
 
 function getDocuments(_type, part) {
     $(".loading-wrap").removeClass("hidden");
-    var take = 3;
+    var take = 5;
     var skipCount = getSkipCount();
 
     var apiAction = "";
@@ -251,4 +253,11 @@ function UpdateNumber(guid)
     var number = parseInt($(".doc-" + guid).text());
     number = number + 1;
     $(".doc-" + guid).text(number);
+}
+
+function OpenCloseItem(el)
+{
+    if ($("." + el).hasClass("hidden"))
+        $("." + el).removeClass(hidden);
+    else $("." + el).addClass(hidden)
 }
