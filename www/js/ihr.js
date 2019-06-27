@@ -199,7 +199,7 @@ function getContent(location) {
         localStorage.page = "povrzani-dokumenti-antikorupciska";
         getDocuments('povrzani-dokumenti', "antikorupciska");
     }
-    else if (location.includes("dokumenti-antidsikriminatorska.html")) {
+    else if (location.includes("dokumenti-antidiskriminatorska.html")) {
         localStorage.page = "povrzani-dokumenti-antidsikriminatorska";
         getDocuments('povrzani-dokumenti', "antidsikriminatorska");
     }
