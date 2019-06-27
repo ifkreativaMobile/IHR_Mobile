@@ -99,6 +99,7 @@ function receivedEvent(id) {
 
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
+    localStorage.page = "homepage";
 
     //getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
@@ -118,15 +119,16 @@ function onPause() {
 function onBackKeyDown(e) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (localStorage.page) {
-        if (window.location.href.indexOf("index.html"))
+        if (localStorage.page = "homepage")
         {
             if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
-                       navigator.app.exitApp();
+                  navigator.app.exitApp();
             }
         }
         else
         {
             window.location.href = "/index.html";
+            localstorag.page = "homepage";
         }
         //if (localStorage.page == "homepage") {
         //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {

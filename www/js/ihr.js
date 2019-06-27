@@ -104,6 +104,14 @@ function getEvents(part) {
                 if (!data["hasMore"])
                     $(".btn-get-events").hide();
             }
+            else {
+                var html = "";
+                $(".loading-wrap").addClass("hidden");
+                html += "Во моментов нема информации за приказ";
+                $(".blog-posts").append(html);
+                $(".btn-get-events").hide();
+            }
+
         },
         error: function (error)
         {
@@ -150,6 +158,13 @@ function getDocuments(_type, part) {
 
                 if (!data["HasMore"])
                     $(".btn-get-events").hide();
+            }
+            else {
+                var html = "";
+                $(".loading-wrap").addClass("hidden");
+                html += "Во моментов нема информации за приказ";
+                $(".blog-posts").append(html);
+                $(".btn-get-events").hide();
             }
         },
         error: function (error) {
