@@ -47,7 +47,7 @@ function getBrief(part) {
                 $.each(data["messages"], function (index, el) {
                     html += "<div class='page-blog-list' onclick='OpenCloseItem(" + "messages-" + i + ")'>"
                         + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
-                        + "<div class='messages-" + i + "' class='page-blog-content hidden'><p>" + el.description + "</p>"
+                        + "<div class='messages-" + i + " page-blog-content hidden'><p>" + el.description + "</p>"
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
                     i++;
