@@ -44,7 +44,10 @@ p { line-height:1.4}
 .menu1 { background-color:#A41320; }
 .menu2 { background-color:#89131e }
 .menu3 { background-color:#521117  }
+.my-menu-item:last-child { border:0px; }
 .lupa { width:40px; height:40px; margin-bottom:10px; text-align:center; margin-left:auto; margin-right:auto; }
+.index-menu-header { background-color:#521117 !important; height:100vh; width:100%; }
+
 /* roboto-regular - latin_cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
