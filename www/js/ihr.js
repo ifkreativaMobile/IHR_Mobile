@@ -255,8 +255,7 @@ function UpdateNumber(guid)
 
 function OpenCloseItem(el)
 {
-    var element = $(this).find("page-blog-content");
-    if (element.hasClass("hidden"))
-        element.removeClass("hidden");
-    else element.addClass("hidden")
+    if ($(el).find(".page-blog-content").hasClass("hidden"))
+        $(el).find(".page-blog-content").removeClass("hidden");
+    else $(el).find(".page-blog-content").addClass("hidden")
 }
