@@ -50,7 +50,9 @@ function initPushwoosh() {
             var message = event.notification.message;
             var userData = event.notification.userdata;
 
-            navigator.notification.alert(message, function () { },'Судски совет под лупа','ОК');
+            navigator.notification.alert(message, function () {
+
+            }, 'Судски совет под лупа', 'ОК');
             //document.getElementById("pushMessage").innerHTML = message + "<p>";
             //document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
 

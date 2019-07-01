@@ -92,9 +92,9 @@ function getEvents(part) {
             if (data["status"] == "OK") {
                 var html = "";
                 $.each(data["messages"], function (index, el) {
-                    html += "<div class='page-blog-list'>"
+                    html += "<div class='page-blog-list' onclick='OpenCloseItem(this)'>"
                         + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
-                        + "<div class='page-blog-content'><p>" + el.description + "</p>"
+                        + "<div class='page-blog-content hidden'><p>" + el.description + "</p>"
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
 
