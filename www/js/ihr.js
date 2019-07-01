@@ -93,7 +93,7 @@ function getEvents(part) {
                 var html = "";
                 $.each(data["messages"], function (index, el) {
                     html += "<div class='page-blog-list' onclick='OpenCloseItem(this)'>"
-                        + "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
+                        + "<div class='page-blog-tags'>" + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                         + "<div class='page-blog-content hidden'><p>" + el.description + "</p>"
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
@@ -142,7 +142,7 @@ function getDocuments(_type, part) {
                 var html = "";
                 $.each(data["documents"], function (index, el) {
                     html += '<div class="page-blog-list">' +
-                                '<div class="page-blog-tags"><i class="ion-calendar date-icon"></i> Објавено на: ' + el.publishDate + '</div>' +
+                                '<div class="page-blog-tags">' + el.publishDate + '</div>' +
                                 '<h4 class="page-blog-title">' + el.name + '</h4>' +
                                 '<div class="page-blog-list-by">' +
                                     '<a class="button btn-download" onClick="DownloadAndUpdateHit(\'' + el.guid + '\',\'' + domain + el.link + '\')"><i class="ion-ios-download date-icon"></i> Превземи</a>' +
