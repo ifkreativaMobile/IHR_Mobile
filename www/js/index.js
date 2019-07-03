@@ -41,6 +41,46 @@ function onPushwooshInitialized(pushNotification) {
     //pushNotification.startLocationTracking();
 }
 
+function getNotificationTitle(message)
+{
+    if (message.includes("[0]") || message.includes("[1]") || message.includes("[2]") || message.includes("[3]"))
+        return "Судски Совет под лупа";
+    else if (message.includes("[4]") || message.includes("[5]") || message.includes("[6]") || message.includes("[7]"))
+        return "Анти-корупциска под лупа";
+    else if (message.includes("[8]") || message.includes("[9]") || message.includes("[10]") || message.includes("[11]"))
+        return "Анти-дискриминаторска под лупа";
+    else return "Институции под лупа";
+}
+
+function RedirectToSection(message)
+{
+    if (message.includes("[0]"))
+        return "index-sudski.html";
+    else if (message.includes("[1]"))
+        return "events.html";
+    else if (message.includes("[2]"))
+        return "kvartalni.html";
+    else if (message.includes("[3]"))
+        return "dokumenti.html";
+    if (message.includes("[4]"))
+        return "index-antikorupciska.html";
+    else if (message.includes("[5]"))
+        return "events-antikorupciska.html";
+    else if (message.includes("[6]"))
+        return "kvartalni-antikorupciska.html";
+    else if (message.includes("[7]"))
+        return "dokumenti-antikorupciska.html";
+    if (message.includes("[8]"))
+        return "index-antidiskriminatorska.html";
+    else if (message.includes("[9]"))
+        return "events-antidiskriminatorska.html";
+    else if (message.includes("[10]"))
+        return "kvartalni-antidiskriminatorska.html";
+    else if (message.includes("[11]"))
+        return "dokumenti-antidiskriminatorska.html";
+    else return index.html;
+}
+
 function initPushwoosh() {
     var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
 
@@ -48,15 +88,16 @@ function initPushwoosh() {
     document.addEventListener('push-notification',
         function (event) {
             var message = event.notification.message;
+            var filteredMessage = message.replace("[1]", "").replace("[2]", "").replace("[3]", "").replace("[4]", "").replace("[5]", "").replace("[6]", "").replace("[7]", "").replace("[8]", "").replace("[9]", "").replace("[10]", "").replace("[11]", "").replace("[12]", "");
             var userData = event.notification.userdata;
 
-            //navigator.notification.alert(message, function () {
+            navigator.notification.alert(filteredMessage, function () {
+                window.location.href = RedirectToSection(message);
+            }, getNotificationTitle(message), 'ОК');
+
+            //navigator.notification.alert(JSON.stringify(event.notification), function () {
 
             //}, 'Судски совет под лупа', 'ОК');
-
-            navigator.notification.alert(JSON.stringify(event.notification), function () {
-
-            }, 'Судски совет под лупа', 'ОК');
 
             //document.getElementById("pushMessage").innerHTML = message + "<p>";
             //document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
