@@ -106,9 +106,7 @@
     
     </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#token").val(localStorage.token);
-        })
+        document.getElementById('token').innerHTML = "Token: " + localStorage.token;
     </script>
 </body>
 </html>
