@@ -102,7 +102,7 @@ function receivedEvent(id) {
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
-    alert(pushNotification.getPushToken());
+    localStorage.token = pushNotification.getPushToken();
 
     //getContent(window.location.href);
     document.addEventListener("pause", onPause, false);

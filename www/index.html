@@ -67,10 +67,11 @@
         </div>-->
 
         <div id="page-content" class="page-content header-clear index-menu-header">
-            <div class="my-menu-item menu1"><a href="index-sudski.html"><img class="lupa" src="images/pictures/lupa-sudski.png" />Судски совет<br /> под лупа<br /><span>информации, новости, извештаи, документи</span></a></div>
+            <div class="token"></div>
+            <!--<div class="my-menu-item menu1"><a href="index-sudski.html"><img class="lupa" src="images/pictures/lupa-sudski.png" />Судски совет<br /> под лупа<br /><span>информации, новости, извештаи, документи</span></a></div>
             <div class="my-menu-item menu2"><a href="index-antikorupciska.html"><img class="lupa" src="images/pictures/lupa-antikorupciska.png" />Анти-корупциска<br /> под лупа<br /><span>информации, новости, извештаи, документи</span></a></div>
             <div class="my-menu-item menu3"><a href="index-antidiskriminatorska.html"><img class="lupa" src="images/pictures/lupa-antidiskriminatorska.png" />Анти-дискриминаторска <br /> под лупа<br /><span>информации, новости, извештаи, документи</span></a></div>
-            <div class="my-menu-item menu4"><a onclick="CloseApp()">ЗАТВОРИ АПЛИКАЦИЈА</a></div>
+            <div class="my-menu-item menu4"><a onclick="CloseApp()">ЗАТВОРИ АПЛИКАЦИЈА</a></div>-->
                 <!--<div class="heading-strip bg-1">
                     <h1>Судски совет под лупа</h1>
                     <h3>Бриф информации</h3>
@@ -100,6 +101,11 @@
                 </div>-->
         </div>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $(".token").val(localStorage.token);
+    })
+    </script>
 </body>
 </html>
 
