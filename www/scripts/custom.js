@@ -865,9 +865,9 @@
                 "transition":"all 250ms ease"
             });
             getContent(window.location.href);
-            navigator.notification.alert(window.location.href, function () {
+            //navigator.notification.alert(window.location.href, function () {
 
-            }, '', 'ОК');
+            //}, '', 'ОК');
         }
       };
       var smoothState = $('#page-transitions').smoothState(options).data('smoothState');
