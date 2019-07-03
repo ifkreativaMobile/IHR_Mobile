@@ -78,7 +78,7 @@ function RedirectToSection(message)
         return "kvartalni-antidiskriminatorska.html";
     else if (message.includes("[11]"))
         return "dokumenti-antidiskriminatorska.html";
-    else return index.html;
+    else return "index.html";
 }
 
 function initPushwoosh() {
@@ -88,7 +88,8 @@ function initPushwoosh() {
     document.addEventListener('push-notification',
         function (event) {
             var message = event.notification.message;
-            var filteredMessage = message.replace("[1]", "").replace("[2]", "").replace("[3]", "").replace("[4]", "").replace("[5]", "").replace("[6]", "").replace("[7]", "").replace("[8]", "").replace("[9]", "").replace("[10]", "").replace("[11]", "").replace("[12]", "");
+            var pomoshna = message;
+            var filteredMessage = pomoshna.replace("[1]", "").replace("[2]", "").replace("[3]", "").replace("[4]", "").replace("[5]", "").replace("[6]", "").replace("[7]", "").replace("[8]", "").replace("[9]", "").replace("[10]", "").replace("[11]", "").replace("[12]", "");
             var userData = event.notification.userdata;
 
             navigator.notification.alert(filteredMessage, function () {
