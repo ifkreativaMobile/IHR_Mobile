@@ -89,20 +89,15 @@ function initPushwoosh() {
         function (event) {
             var message = event.notification.message;
             var pomoshna = message;
-            var filteredMessage = pomoshna.replace("[1]", "").replace("[2]", "").replace("[3]", "").replace("[4]", "").replace("[5]", "").replace("[6]", "").replace("[7]", "").replace("[8]", "").replace("[9]", "").replace("[10]", "").replace("[11]", "").replace("[12]", "");
+            var filteredMessage = pomoshna.replace("[1]", "").replace("[2]", "").replace("[3]", "").replace("[4]", "").replace("[5]", "").replace("[6]", "").replace("[7]", "").replace("[8]", "").replace("[9]", "").replace("[10]", "").replace("[11]", "").replace("[0]", "");
             var userData = event.notification.userdata;
 
             navigator.notification.alert(filteredMessage, function () {
                 lokacija = RedirectToSection(message);
                 window.location.href = RedirectToSection(message);
-                //$("body").append(" <a id='redirect' class='menu-item open-submenu active-submenu hidden' href='" + lokacija + "'></a>");
-                //$("#redirect").click();
-                //getContent(window.location.href);
-                getContent("index-sudski.html");
             }, getNotificationTitle(message), 'ОК');
 
             //navigator.notification.alert(JSON.stringify(event.notification), function () {
-
             //}, 'Судски совет под лупа', 'ОК');
 
             //document.getElementById("pushMessage").innerHTML = message + "<p>";
@@ -161,7 +156,6 @@ function receivedEvent(id) {
     localStorage.page = "homepage";
     //localStorage.token = pushNotification.getPushToken();
     //navigator.notification.alert("Token:" + localStorage.getItem("pushwooshToken"), function () {
-
     //}, 'Судски совет под лупа', 'ОК');
 
     //getContent(window.location.href);

@@ -1,16 +1,5 @@
 ﻿var domain = "http://ihr.ifkreativa.com";
 
-$(document).ready(function () {
-    //navigator.notification.alert(window.location.href, 'Порака', 'ОК');
-    //var urlParams = new URLSearchParams(window.location.search);
-    //navigator.notification.alert(urlParams, 'Порака', 'ОК');
-    //navigator.notification.alert(urlParams.has('link'), 'Порака', 'ОК');
-    //var linkID = urlParams.get('link');
-    //navigator.notification.alert(window.location.href, 'Порака', 'ОК');
-    //if (!$(".loading-wrap").hasClass("hidden"))
-    //    getContent(window.location.href);
-});
-
 function DownloadAndUpdateHit(guid, link)
 {
     window.open(link, '_system');
