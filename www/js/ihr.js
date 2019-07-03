@@ -2,6 +2,11 @@
 
 $(document).ready(function () {
     navigator.notification.alert(window.location.href, 'Порака', 'ОК');
+    var urlParams = new URLSearchParams(window.location.search);
+    navigator.notification.alert(urlParams, 'Порака', 'ОК');
+    navigator.notification.alert(urlParams.has('link'), 'Порака', 'ОК');
+    var linkID = urlParams.get('link');
+
 });
 
 function DownloadAndUpdateHit(guid, link)
