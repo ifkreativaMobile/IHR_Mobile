@@ -23,7 +23,7 @@
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 
-<body onload="Initalize()">
+<body>
     <div id="page-transitions">
         <div class="page-preloader page-preloader-dark">
             <div class="spinner"></div>
@@ -98,9 +98,9 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            navigator.notification.alert(window.location.href, 'Порака', 'ОК');
-            if (!$(".loading-wrap").hasClass("hidden"))
+            if (!$(".loading-wrap").hasClass("hidden")) {
                 getBrief('sudski');
+            }
         });
     </script>
 </body>
