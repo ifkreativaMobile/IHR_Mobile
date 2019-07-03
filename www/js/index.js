@@ -77,7 +77,7 @@ function initPushwoosh() {
             //alert("Success: " + status.pushToken);
             //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
-            navigator.notification.alert("Register Device fired", function () {
+            navigator.notification.alert("Register Device fired. Token: " + status.pushToken, function () {
 
             }, 'Судски совет под лупа', 'ОК');
             //localStorage.token = status.pushToken;
