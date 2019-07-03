@@ -1,4 +1,4 @@
-$(document).ready(function () {      
+﻿$(document).ready(function () {      
             
     function init_template(){//Class is vital to run AJAX Pages 
         
@@ -865,7 +865,9 @@ $(document).ready(function () {
                 "transition":"all 250ms ease"
             });
             getContent(window.location.href);
-            //alert(window.location.href);
+            navigator.notification.alert(window.location.href, function () {
+
+            }, '', 'ОК');
         }
       };
       var smoothState = $('#page-transitions').smoothState(options).data('smoothState');
