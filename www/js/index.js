@@ -73,11 +73,8 @@ function initPushwoosh() {
     //register for push notifications
     pushNotification.registerDevice(
         function (status) {
-            //alert("Success: " + status.pushToken);
-            //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
-            if (confirm(status.pushToken)) {
-                
-            }
+            alert("Success: " + status.pushToken);
+            document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
         },
         function (status) {
