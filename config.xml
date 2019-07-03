@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="mk.ihr.app" version="1.0.7" versionCode="10007" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Судски совет под лупа</name>
+<widget id="mk.ihr.app" version="1.0.8" versionCode="10008" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Институции по лупа</name>
     <description>
       Зголемување на јавниот надзор врз работата на Судскиот совет на РМ
     </description>
