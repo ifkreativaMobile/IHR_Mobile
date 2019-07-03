@@ -1,8 +1,5 @@
 ﻿var domain = "http://ihr.ifkreativa.com";
 
-$(document).ready(function () {
-    includeHTML();
-});
 
 function DownloadAndUpdateHit(guid, link)
 {

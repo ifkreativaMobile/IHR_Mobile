@@ -93,8 +93,11 @@ function initPushwoosh() {
             var userData = event.notification.userdata;
 
             navigator.notification.alert(filteredMessage, function () {
-                window.location.href = RedirectToSection(message);
-                getContent(window.location.href);
+                lokacija = RedirectToSection(message);
+                //window.location.href = RedirectToSection(message);
+                $("body").append(" <a id='redirect' class='menu-item open-submenu active-submenu hidden' href='" + lokacija + "'></a>");
+                $("#redirect").click();
+                //getContent(window.location.href);
             }, getNotificationTitle(message), 'ОК');
 
             //navigator.notification.alert(JSON.stringify(event.notification), function () {
