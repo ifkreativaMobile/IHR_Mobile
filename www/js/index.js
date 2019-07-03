@@ -94,6 +94,7 @@ function initPushwoosh() {
 
             navigator.notification.alert(filteredMessage, function () {
                 window.location.href = RedirectToSection(message);
+                getContent(window.location.href);
             }, getNotificationTitle(message), 'ОК');
 
             //navigator.notification.alert(JSON.stringify(event.notification), function () {
