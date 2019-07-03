@@ -37,19 +37,22 @@ p { line-height:1.4}
     .loading-wrap img { width:100%; }
 .hidden { display:none; }
 
-.my-menu-item { height: 30vh; text-align: center; display: inline-block; width: 100%; border-bottom: 1px solid #eee; position: relative; float: left; }
-    .my-menu-item a { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size:3vh; text-transform:uppercase; line-height:4vh; font-weight:bold; color:white; font-family:Roboto; width:100%;  }
+.my-menu-item { border-radius:6px; text-align: center; display: inline-block; width: 100%; position: relative; float: left; margin-bottom:8px; padding:15px;}
+    .my-menu-item a { /*position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size:3vh;*/ width:100%; text-transform:uppercase; line-height:4vh; font-weight:bold; color:white; font-family:Roboto; position:relative; float:left; font-size:4vw; /*width:100%;*/  }
         .my-menu-item a span { font-size:9px; font-style:italic; }
 
 .menu1 { background-color:#A41320; }
 .menu2 { background-color:#89131e }
 .menu3 { background-color:#521117  }
 .menu4 { background-color:#111; color:white;  }
-    .menu4 a { line-height: 10vh; color: white; margin-left: auto; margin-right: auto; position: relative; display: inline-block; top: unset; left: unset; transform: none; font-size:2vh }
+    .menu4 a { color: white; width:100%; position: relative; display: inline-block; top: unset; left: unset; transform: none; font-size:2vh; text-align:center; }
 .my-menu-item:last-child { border:0px; }
-.lupa { width:40px; height:40px; margin-bottom:10px; text-align:center; margin-left:auto; margin-right:auto; }
-.index-menu-header { background-color:#521117 !important; height:100vh; width:100%; }
+.lupa { width:100%; margin-bottom:10px; text-align:center; }
+.index-menu-header { background-color:White !important; height:100vh; padding:15px; background-color:#eee; }
 .hidden { display:none; }
+.menu-img { width:25%; position:relative; float:left;  }
+.menu-tekst { width: 100%; padding-left:30%; margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align:left; }
+.menu-institucii-logo img { width:100%; margin-bottom:8px; max-width:600px; margin-left:auto; margin-right:auto; }
 
 /* roboto-regular - latin_cyrillic-ext */
 @font-face {
