@@ -6,9 +6,9 @@ $(document).ready(function () {
     //navigator.notification.alert(urlParams, 'Порака', 'ОК');
     //navigator.notification.alert(urlParams.has('link'), 'Порака', 'ОК');
     //var linkID = urlParams.get('link');
-    navigator.notification.alert(window.location.href, 'Порака', 'ОК');
-    if (!$(".loading-wrap").hasClass("hidden"))
-        getContent(window.location.href);
+    //navigator.notification.alert(window.location.href, 'Порака', 'ОК');
+    //if (!$(".loading-wrap").hasClass("hidden"))
+    //    getContent(window.location.href);
 });
 
 function DownloadAndUpdateHit(guid, link)
