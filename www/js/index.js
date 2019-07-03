@@ -103,7 +103,7 @@ function receivedEvent(id) {
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
     //localStorage.token = pushNotification.getPushToken();
-    navigator.notification.alert("Token:", function () {
+    navigator.notification.alert("Token:" + pushNotification.getPushToken(), function () {
 
     }, 'Судски совет под лупа', 'ОК');
 
