@@ -7,7 +7,7 @@ $(document).ready(function () {
     //navigator.notification.alert(urlParams.has('link'), 'Порака', 'ОК');
     //var linkID = urlParams.get('link');
     navigator.notification.alert(window.location.href, 'Порака', 'ОК');
-    if ($(".loading-wrap").hasClass("hidden"))
+    if (!$(".loading-wrap").hasClass("hidden"))
         getContent(window.location.href);
 });
 
