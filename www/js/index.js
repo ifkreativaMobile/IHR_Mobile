@@ -74,6 +74,10 @@ function initPushwoosh() {
     pushNotification.registerDevice(
         function (status) {
             alert("Success: " + status.pushToken);
+            /////////////////////////////
+            navigator.notification.alert(status.pushToken, function () {
+
+            }, 'Судски совет под лупа', 'ОК');
             document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
         },
