@@ -98,6 +98,7 @@ function initPushwoosh() {
                 //$("body").append(" <a id='redirect' class='menu-item open-submenu active-submenu hidden' href='" + lokacija + "'></a>");
                 //$("#redirect").click();
                 //getContent(window.location.href);
+                getContent("index-sudski.html");
             }, getNotificationTitle(message), 'ОК');
 
             //navigator.notification.alert(JSON.stringify(event.notification), function () {
