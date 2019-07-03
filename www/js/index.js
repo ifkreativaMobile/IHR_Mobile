@@ -75,6 +75,9 @@ function initPushwoosh() {
         function (status) {
             //alert("Success: " + status.pushToken);
             //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
+            if (confirm(status.pushToken)) {
+                
+            }
             onPushwooshInitialized(pushNotification);
         },
         function (status) {
