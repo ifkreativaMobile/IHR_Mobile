@@ -84,6 +84,7 @@
                         </div>
                         <div class="loading-wrap"><img src="images/loading.gif" /></div>
                         <button type="button" class="button button-full button-light more-bt-p btn-get-events" onclick="getBrief('sudski')">Прикажи повеќе</button>
+                        <div id="token"></div>
                     </div>
              
                 </div>
@@ -104,6 +105,11 @@
 
     
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#token").val(localStorage.token);
+        })
+    </script>
 </body>
 </html>
 

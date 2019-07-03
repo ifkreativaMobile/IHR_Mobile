@@ -5,7 +5,6 @@ function onPushwooshInitialized(pushNotification) {
     pushNotification.getPushToken(
         function (token) {
             console.info('push token: ' + token);
-            localstorage.set('pushwooshToken', token);
         }
     );
 
@@ -77,9 +76,10 @@ function initPushwoosh() {
             //alert("Success: " + status.pushToken);
             //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
-            navigator.notification.alert("Register Device fired. Token: " + status.pushToken, function () {
+            localStorage.token = status.pushToken;
+            //navigator.notification.alert("Register Device fired. Token: " + status.pushToken, function () {
 
-            }, 'Судски совет под лупа', 'ОК');
+            //}, 'Судски совет под лупа', 'ОК');
             //localStorage.token = status.pushToken;
         },
         function (status) {
@@ -108,9 +108,9 @@ function receivedEvent(id) {
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
     //localStorage.token = pushNotification.getPushToken();
-    navigator.notification.alert("Token:" + localStorage.getItem("pushwooshToken"), function () {
+    //navigator.notification.alert("Token:" + localStorage.getItem("pushwooshToken"), function () {
 
-    }, 'Судски совет под лупа', 'ОК');
+    //}, 'Судски совет под лупа', 'ОК');
 
     //getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
