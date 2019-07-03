@@ -5,7 +5,7 @@ function onPushwooshInitialized(pushNotification) {
     pushNotification.getPushToken(
         function (token) {
             console.info('push token: ' + token);
-            localStorage.token = token;
+            localstorage.set('pushwooshToken', token);
         }
     );
 
@@ -77,7 +77,10 @@ function initPushwoosh() {
             //alert("Success: " + status.pushToken);
             //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
-            localStorage.token = status.pushToken;
+            avigator.notification.alert("Register Device fired", function () {
+
+            }, 'Судски совет под лупа', 'ОК');
+            //localStorage.token = status.pushToken;
         },
         function (status) {
             //alert("failed to register: " + status);
@@ -105,7 +108,7 @@ function receivedEvent(id) {
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
     //localStorage.token = pushNotification.getPushToken();
-    navigator.notification.alert("Token:" + localStorage.token, function () {
+    navigator.notification.alert("Token:" + localStorage.getItem("pushwooshToken"), function () {
 
     }, 'Судски совет под лупа', 'ОК');
 
