@@ -102,8 +102,8 @@ function receivedEvent(id) {
     console.log('Received Event: ' + id);
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
-    localStorage.token = pushNotification.getPushToken();
-    navigator.notification.alert("Token:" + pushNotification.getPushToken(), function () {
+    //localStorage.token = pushNotification.getPushToken();
+    navigator.notification.alert("Token:", function () {
 
     }, 'Судски совет под лупа', 'ОК');
 
@@ -134,7 +134,7 @@ function onBackKeyDown(e) {
     if (localStorage.page) {
         if (localStorage.page == "homepage")
         {
-            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата? Token:" + pushNotification.getPushToken( ))) {
                   navigator.app.exitApp();
             }
         }
