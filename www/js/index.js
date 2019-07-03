@@ -73,12 +73,8 @@ function initPushwoosh() {
     //register for push notifications
     pushNotification.registerDevice(
         function (status) {
-            alert("Success: " + status.pushToken);
-            /////////////////////////////
-            navigator.notification.alert(status.pushToken, function () {
-
-            }, 'Судски совет под лупа', 'ОК');
-            document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
+            //alert("Success: " + status.pushToken);
+            //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
         },
         function (status) {
@@ -107,6 +103,9 @@ function receivedEvent(id) {
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
     localStorage.token = pushNotification.getPushToken();
+    navigator.notification.alert("Token:" + pushNotification.getPushToken(), function () {
+
+    }, 'Судски совет под лупа', 'ОК');
 
     //getContent(window.location.href);
     document.addEventListener("pause", onPause, false);
