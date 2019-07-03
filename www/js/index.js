@@ -50,9 +50,14 @@ function initPushwoosh() {
             var message = event.notification.message;
             var userData = event.notification.userdata;
 
-            navigator.notification.alert(message, function () {
+            //navigator.notification.alert(message, function () {
+
+            //}, 'Судски совет под лупа', 'ОК');
+
+            navigator.notification.alert(JSON.stringify(event.notification), function () {
 
             }, 'Судски совет под лупа', 'ОК');
+
             //document.getElementById("pushMessage").innerHTML = message + "<p>";
             //document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
 
@@ -76,7 +81,7 @@ function initPushwoosh() {
             //alert("Success: " + status.pushToken);
             //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
-            localStorage.token = status.pushToken;
+            //localStorage.token = status.pushToken;
             //navigator.notification.alert("Register Device fired. Token: " + status.pushToken, function () {
 
             //}, 'Судски совет под лупа', 'ОК');

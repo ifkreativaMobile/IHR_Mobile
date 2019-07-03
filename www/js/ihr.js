@@ -51,7 +51,7 @@ function getBrief(part) {
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
                 });
-                html += "<div>Token: " + localStorage.token + "</div>"
+                //html += "<div>Token: " + localStorage.token + "</div>"
                 $(".blog-posts").append(html);
                 $(".loading-wrap").addClass("hidden");
                 if (!data["hasMore"])
