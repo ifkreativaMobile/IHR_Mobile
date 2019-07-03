@@ -55,29 +55,29 @@ function getNotificationTitle(message)
 function RedirectToSection(message)
 {
     if (message.includes("[0]"))
-        return "index-sudski.html";
+        return "index-sudski.html?link=0";
     else if (message.includes("[1]"))
-        return "events.html";
+        return "events.html?link=1";
     else if (message.includes("[2]"))
-        return "kvartalni.html";
+        return "kvartalni.html?link=2";
     else if (message.includes("[3]"))
-        return "dokumenti.html";
+        return "dokumenti.html?link=3";
     if (message.includes("[4]"))
-        return "index-antikorupciska.html";
+        return "index-antikorupciska.html?link=4";
     else if (message.includes("[5]"))
-        return "events-antikorupciska.html";
+        return "events-antikorupciska.html?link=5";
     else if (message.includes("[6]"))
-        return "kvartalni-antikorupciska.html";
+        return "kvartalni-antikorupciska.html?link=6";
     else if (message.includes("[7]"))
-        return "dokumenti-antikorupciska.html";
+        return "dokumenti-antikorupciska.html?link=7";
     if (message.includes("[8]"))
-        return "index-antidiskriminatorska.html";
+        return "index-antidiskriminatorska.html?link=8";
     else if (message.includes("[9]"))
-        return "events-antidiskriminatorska.html";
+        return "events-antidiskriminatorska.html?link=9";
     else if (message.includes("[10]"))
-        return "kvartalni-antidiskriminatorska.html";
+        return "kvartalni-antidiskriminatorska.html?link=10";
     else if (message.includes("[11]"))
-        return "dokumenti-antidiskriminatorska.html";
+        return "dokumenti-antidiskriminatorska.html?link=11";
     else return "index.html";
 }
 
@@ -94,9 +94,9 @@ function initPushwoosh() {
 
             navigator.notification.alert(filteredMessage, function () {
                 lokacija = RedirectToSection(message);
-                //window.location.href = RedirectToSection(message);
-                $("body").append(" <a id='redirect' class='menu-item open-submenu active-submenu hidden' href='" + lokacija + "'></a>");
-                $("#redirect").click();
+                window.location.href = RedirectToSection(message);
+                //$("body").append(" <a id='redirect' class='menu-item open-submenu active-submenu hidden' href='" + lokacija + "'></a>");
+                //$("#redirect").click();
                 //getContent(window.location.href);
             }, getNotificationTitle(message), 'ОК');
 

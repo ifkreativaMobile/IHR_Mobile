@@ -1,5 +1,8 @@
 ﻿var domain = "http://ihr.ifkreativa.com";
 
+$(document).ready(function () {
+    navigator.notification.alert(window.location.href, 'Порака', 'ОК');
+});
 
 function DownloadAndUpdateHit(guid, link)
 {
