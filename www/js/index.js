@@ -5,9 +5,7 @@ function onPushwooshInitialized(pushNotification) {
     pushNotification.getPushToken(
         function (token) {
             console.info('push token: ' + token);
-            navigator.notification.alert(token, function () {
-
-            }, 'Судски совет под лупа', 'ОК');
+            localStorage.token = token;
         }
     );
 
@@ -79,6 +77,7 @@ function initPushwoosh() {
             //alert("Success: " + status.pushToken);
             //document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
             onPushwooshInitialized(pushNotification);
+            localStorage.token = status.pushToken;
         },
         function (status) {
             //alert("failed to register: " + status);
@@ -106,7 +105,7 @@ function receivedEvent(id) {
     localStorage.platform = device.platform;
     localStorage.page = "homepage";
     //localStorage.token = pushNotification.getPushToken();
-    navigator.notification.alert("Token:" + pushNotification.getPushToken(), function () {
+    navigator.notification.alert("Token:" + localStorage.token, function () {
 
     }, 'Судски совет под лупа', 'ОК');
 
@@ -137,7 +136,7 @@ function onBackKeyDown(e) {
     if (localStorage.page) {
         if (localStorage.page == "homepage")
         {
-            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата? Token:" + pushNotification.getPushToken( ))) {
+            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
                   navigator.app.exitApp();
             }
         }
