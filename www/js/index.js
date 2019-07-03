@@ -5,6 +5,9 @@ function onPushwooshInitialized(pushNotification) {
     pushNotification.getPushToken(
         function (token) {
             console.info('push token: ' + token);
+            navigator.notification.alert(token, function () {
+
+            }, 'Судски совет под лупа', 'ОК');
         }
     );
 
