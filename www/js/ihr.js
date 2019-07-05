@@ -37,7 +37,7 @@ function getBrief(part) {
     else apiAction = "getBriefAntidiskriminatorska";
 
     $.ajax({
-        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take,
+        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "&callback=?",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
@@ -66,9 +66,9 @@ function getBrief(part) {
                 $(".btn-get-events").hide();
             }
         },
-        error: function (error) {
+        error: function (XHR, textStatus, errorThrown) {
             navigator.notification.alert(
-                error,  // message
+                "TestStatus: " + textStatus + "ErrorTrown: " + errorThrown,  // message
                 onNoNetworkConfirm,              // callback to invoke with index of button pressed
                 'Порака',            // title
                 'ОК'          // buttonLabels
