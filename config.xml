@@ -123,6 +123,8 @@
    
     <splash platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*"/> <!-- allow all pages, use for development -->
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
     <access origin="*.ifkreativa.com"/>
 </widget>

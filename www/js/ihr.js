@@ -40,7 +40,6 @@ function getBrief(part) {
         url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take,
         type: "GET",
         dataType: "jsonp",
-        crossDomain: true,
         success: function (data) {
             if (data["status"] == "OK") {
                 var html = "";
