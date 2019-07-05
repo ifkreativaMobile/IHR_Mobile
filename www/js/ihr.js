@@ -67,7 +67,13 @@ function getBrief(part) {
             }
         },
         error: function (error) {
-            showNoNetwork();
+            navigator.notification.alert(
+                error,  // message
+                onNoNetworkConfirm,              // callback to invoke with index of button pressed
+                'Порака',            // title
+                'ОК'          // buttonLabels
+            );
+            //showNoNetwork();
         }
 
     })
