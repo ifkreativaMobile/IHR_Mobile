@@ -864,7 +864,7 @@
                 "-ms-transform": "scale("+1+")",
                 "transition":"all 250ms ease"
             });
-            //getContent(window.location.href);
+            getContent(window.location.href);
         }
       };
       var smoothState = $('#page-transitions').smoothState(options).data('smoothState');
