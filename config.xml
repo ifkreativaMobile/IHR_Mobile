@@ -18,7 +18,7 @@
   <preference name="SplashScreen" value="splash" />
   <preference name="SplashScreenDelay" value="3000" />
   <preference name="permissions" value="none" />
-  <preference name="phonegap-version" value="cli-7.0.1" />
+  <preference name="phonegap-version" value="cli-6.5.0" />
   <preference name="orientation" value="portrait" />
   <preference name="target-device" value="universal" />
   <preference name="fullscreen" value="true" />
