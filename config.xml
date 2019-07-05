@@ -127,5 +127,4 @@
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
-    <access origin="*.ifkreativa.com"/>
 </widget>

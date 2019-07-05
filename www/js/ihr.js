@@ -66,9 +66,9 @@ function getBrief(part) {
                 $(".btn-get-events").hide();
             }
         },
-        error: function (XHR, textStatus, errorThrown) {
+        error: function (error) {
             navigator.notification.alert(
-                "TestStatus: " + textStatus + "ErrorTrown: " + errorThrown,  // message
+                error,  // message
                 onNoNetworkConfirm,              // callback to invoke with index of button pressed
                 'Порака',            // title
                 'ОК'          // buttonLabels
