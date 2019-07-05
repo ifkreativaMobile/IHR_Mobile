@@ -37,7 +37,7 @@ function getBrief(part) {
     else apiAction = "getBriefAntidiskriminatorska";
 
     $.ajax({
-        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "&callback=?",
+        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "&callback=success",
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
