@@ -124,4 +124,5 @@
     <splash platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*"/> <!-- allow all pages, use for development -->
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
+    <access origin="*.ifkreativa.com"/>
 </widget>
