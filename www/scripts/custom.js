@@ -854,7 +854,7 @@
         },
 
         onAfter: function($container, $newContent) {
-            setTimeout(init_template, 0)//Timeout required to properly initiate all JS Functions. 
+            setTimeout(init_template, 0); //Timeout required to properly initiate all JS Functions.
             $('.page-preloader').removeClass('show-preloader');
             $('#page-content').css({
                 "transform": "scale("+1+")", 
