@@ -36,6 +36,47 @@ function getBrief(part) {
         apiAction = "getBriefAntikorupciska";
     else apiAction = "getBriefAntidiskriminatorska";
 
+    //$.ajax({
+    //    url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take,
+    //    type: "GET",
+    //    dataType: "jsonp",
+    //    success: function (data) {
+    //        if (data["status"] == "OK") {
+    //            var html = "";
+    //            $.each(data["messages"], function (index, el) {
+    //                html += "<div class='page-blog-list' onclick='OpenCloseItem(this)'>"
+    //                    //+ "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
+    //                    + "<div class='page-blog-tags'>" + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
+    //                    + "<div class='page-blog-content hidden'><p>" + el.description + "</p>"
+    //                    + "</div><div class='clear'></div>"
+    //                        + "</div><div class='decoration'></div>";
+    //            });
+    //            //html += "<div>Token: " + localStorage.token + "</div>"
+    //            $(".blog-posts").append(html);
+    //            $(".loading-wrap").addClass("hidden");
+    //            if (!data["hasMore"])
+    //                $(".btn-get-events").hide();
+    //        }
+    //        else
+    //        {
+    //            var html = "";
+    //            $(".loading-wrap").addClass("hidden");
+    //            html += "Во моментов нема бриф информации за приказ";
+    //            $(".blog-posts").append(html);
+    //            $(".btn-get-events").hide();
+    //        }
+    //    },
+    //    error: function (error) {
+    //        navigator.notification.alert(
+    //            error,  // message
+    //            onNoNetworkConfirm,              // callback to invoke with index of button pressed
+    //            'Порака',            // title
+    //            'ОК'          // buttonLabels
+    //        );
+    //        //showNoNetwork();
+    //    }
+    //
+    //})
     $.ajax({
         url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take,
         type: "GET",
@@ -45,38 +86,32 @@ function getBrief(part) {
                 var html = "";
                 $.each(data["messages"], function (index, el) {
                     html += "<div class='page-blog-list' onclick='OpenCloseItem(this)'>"
-                        //+ "<div class='page-blog-tags'><i class='ion-calendar date-icon'></i> Објавено на: " + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                         + "<div class='page-blog-tags'>" + el.publishDate + "</div><h4 class='page-blog-title'>" + el.title + "</h4>"
                         + "<div class='page-blog-content hidden'><p>" + el.description + "</p>"
                         + "</div><div class='clear'></div>"
                             + "</div><div class='decoration'></div>";
+
                 });
-                //html += "<div>Token: " + localStorage.token + "</div>"
                 $(".blog-posts").append(html);
                 $(".loading-wrap").addClass("hidden");
                 if (!data["hasMore"])
                     $(".btn-get-events").hide();
             }
-            else
-            {
+            else {
                 var html = "";
                 $(".loading-wrap").addClass("hidden");
-                html += "Во моментов нема бриф информации за приказ";
+                html += "Во моментов нема информации за приказ";
                 $(".blog-posts").append(html);
                 $(".btn-get-events").hide();
             }
+
         },
         error: function (error) {
-            navigator.notification.alert(
-                error,  // message
-                onNoNetworkConfirm,              // callback to invoke with index of button pressed
-                'Порака',            // title
-                'ОК'          // buttonLabels
-            );
-            //showNoNetwork();
+            showNoNetwork();
         }
 
     })
+
 }
 
 function getEvents(part) {
