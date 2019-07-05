@@ -37,7 +37,7 @@ function getBrief(part) {
     else apiAction = "getBriefAntidiskriminatorska";
 
     $.ajax({
-        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "&callback=success",
+        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take,
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
@@ -92,7 +92,7 @@ function getEvents(part) {
     else apiAction = "getMessagesAntidiskriminatorska";
 
     $.ajax({
-        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take + "&callback=?",
+        url: domain + "/api/" + apiAction + "?lang=mk&skip=" + skipCount + "&take=" + take,
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
@@ -141,7 +141,7 @@ function getDocuments(_type, part) {
     else apiAction = _type == "povrzani-dokumenti" ? "getDocumentsAntidiskriminatorska" : "getReportsAntidiskriminatorska";
    
     $.ajax({
-        url: domain + "/api/" + apiAction + "?skip=" + skipCount + "&take=" + take + "&callback=?",
+        url: domain + "/api/" + apiAction + "?skip=" + skipCount + "&take=" + take,
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
