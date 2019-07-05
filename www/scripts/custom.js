@@ -864,10 +864,7 @@
                 "-ms-transform": "scale("+1+")",
                 "transition":"all 250ms ease"
             });
-            getContent(window.location.href);
-            //navigator.notification.alert(window.location.href, function () {
-
-            //}, '', 'ОК');
+            //getContent(window.location.href);
         }
       };
       var smoothState = $('#page-transitions').smoothState(options).data('smoothState');
