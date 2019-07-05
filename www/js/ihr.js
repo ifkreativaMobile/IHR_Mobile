@@ -41,6 +41,12 @@ function getBrief(part) {
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
+            navigator.notification.alert(
+                "Sucesss",
+                onNoNetworkConfirm,
+                'Порака',
+                'ОК'
+            );
             if (data["status"] == "OK") {
                 var html = "";
                 $.each(data["messages"], function (index, el) {
@@ -68,10 +74,10 @@ function getBrief(part) {
         },
         error: function (error) {
             navigator.notification.alert(
-                error,  // message
-                onNoNetworkConfirm,              // callback to invoke with index of button pressed
-                'Порака',            // title
-                'ОК'          // buttonLabels
+                error,  
+                onNoNetworkConfirm,
+                'Порака',
+                'ОК' 
             );
             //showNoNetwork();
         }
